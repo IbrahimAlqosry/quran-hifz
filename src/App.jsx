@@ -173,6 +173,7 @@ export default function App() {
         <div className="quran-font fs-6 mb-1" dir="rtl">﴿وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ﴾</div>
         {t('footer')}
         <div className="mt-1 fw-semibold">{t('devBy')} · {t('devPrayer')} 🤍</div>
+        <div className="father-dua mt-1">🤲 {t('fatherDua')}</div>
       </footer>
     </>
   );

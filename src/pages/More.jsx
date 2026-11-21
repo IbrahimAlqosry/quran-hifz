@@ -70,7 +70,8 @@ export default function More() {
         <img src="./icon-192.png" alt="" width="56" height="56" className="rounded-4 mb-2 shadow-sm" />
         <div className="fw-bold text-body">{t('appName')}</div>
         <div>{t('devBy')}</div>
-        <div className="mb-2">{t('devPrayer')} 🤍</div>
+        <div className="mb-1">{t('devPrayer')} 🤍</div>
+        <div className="father-dua mb-2">🤲 {t('fatherDua')}</div>
         <div>{t('footer')}</div>
       </div>
     </>

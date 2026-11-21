@@ -111,6 +111,7 @@ export default function Home() {
           );
         })}
       </div>
+      <div className="father-dua text-center my-4">🤲 {t('fatherDua')}</div>
     </>
   );
 }

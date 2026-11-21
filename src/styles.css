@@ -357,3 +357,5 @@ body {
 [data-bs-theme='dark'] .surah-star span { color: #7fd1a8; }
 .surah-progress { display: block; height: 3px; border-radius: 2px; background: rgba(25,135,84,.15); margin-top: 4px; max-width: 160px; }
 .surah-progress span { display: block; height: 100%; border-radius: 2px; background: #198754; }
+
+.father-dua { color: var(--quran-gold); font-weight: 600; font-size: .9rem; }

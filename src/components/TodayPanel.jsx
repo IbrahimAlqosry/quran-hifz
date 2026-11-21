@@ -74,7 +74,8 @@ export default function TodayPanel() {
       <div className="today-hero">
         <div className="d-flex justify-content-between align-items-start gap-2 position-relative" style={{ zIndex: 1 }}>
           <div>
-            <div className="today-greet">{greet}</div>
+            <div className="today-greet">{t('salam')}</div>
+            <div className="today-date">{greet}</div>
             {hijri && (
               <div className="today-date">
                 {lang === 'ar' ? hijri.weekday?.ar : hijri.weekday?.en} · {num(hijri.day)} {lang === 'ar' ? hijri.month?.ar : hijri.month?.en} {num(hijri.year)} {t('hijriSuffix')}

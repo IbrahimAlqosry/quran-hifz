@@ -1,5 +1,5 @@
 // Service Worker — يجعل التطبيق يعمل بدون إنترنت لما سبق فتحه
-const VERSION = 'v3';
+const VERSION = 'v4';
 const SHELL = `shell-${VERSION}`;
 const DATA = `data-${VERSION}`;
 
