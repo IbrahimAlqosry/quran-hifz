@@ -170,6 +170,7 @@ export default function App() {
       <footer className="text-center text-muted small py-4 border-top d-none d-lg-block">
         <div className="quran-font fs-6 mb-1" dir="rtl">﴿وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ﴾</div>
         {t('footer')}
+        <div className="mt-1 fw-semibold">{t('devBy')} · {t('devPrayer')} 🤍</div>
       </footer>
     </>
   );

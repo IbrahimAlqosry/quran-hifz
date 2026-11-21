@@ -264,3 +264,32 @@ body {
 /* إحساس التطبيق: لا تحديد نص عرضي، لمسات أنعم */
 .btn, .nav-link, .bottom-nav-item, .app-grid-item, .tile { -webkit-tap-highlight-color: transparent; user-select: none; }
 @media (display-mode: standalone) { body { overscroll-behavior-y: none; } }
+
+/* ===== لوحة «يومك» ===== */
+.today-hero {
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem; color: #fff; padding: 1.1rem 1.2rem;
+  border-radius: 1.4rem; margin-bottom: .9rem; position: relative; overflow: hidden;
+  background: radial-gradient(circle at 15% 0%, rgba(246,220,138,.35), transparent 45%), linear-gradient(135deg, #0f5132, #1d7a50 60%, #2f8f63);
+  box-shadow: 0 8px 24px rgba(15,81,50,.25);
+}
+.today-hero::after {
+  content: ''; position: absolute; inset-inline-end: -30px; bottom: -40px; width: 160px; height: 160px; opacity: .12;
+  background: url('/quran-hifz/icon.svg') center/contain no-repeat;
+}
+.today-greet { font-size: 1.25rem; font-weight: 700; }
+.today-date { opacity: .85; font-size: .9rem; }
+.today-next { text-align: end; position: relative; z-index: 1; }
+.today-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: .7rem; }
+@media (min-width: 992px) { .today-cards { grid-template-columns: repeat(4, 1fr); } }
+.today-card {
+  display: flex; flex-direction: column; gap: 2px; padding: .9rem 1rem; border-radius: 1.2rem; text-decoration: none;
+  color: var(--bs-body-color); background: var(--bs-body-bg); box-shadow: 0 2px 10px rgba(0,0,0,.06);
+  border: 1px solid var(--bs-border-color-translucent); transition: transform .1s;
+}
+.today-card:active { transform: scale(.97); }
+.today-card-icon { font-size: 1.6rem; }
+.today-card-title { font-weight: 700; font-size: .95rem; }
+.today-card-sub { font-size: .78rem; color: var(--bs-secondary-color); }
+.tone-gold { background: linear-gradient(160deg, rgba(246,220,138,.35), var(--bs-body-bg) 70%); }
+.tone-green { background: linear-gradient(160deg, rgba(25,135,84,.18), var(--bs-body-bg) 70%); }
+.tone-blue { background: linear-gradient(160deg, rgba(13,110,253,.12), var(--bs-body-bg) 70%); }

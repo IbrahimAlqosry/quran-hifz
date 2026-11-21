@@ -22,7 +22,7 @@ const DEFAULT_SETTINGS = {
   prayerMethod: 5, // الهيئة المصرية العامة للمساحة
   lastRead: null, // { surah, ayah }
   lastPage: null,
-  adhan: { enabled: false, voice: 1, prayers: { Fajr: true, Dhuhr: true, Asr: true, Maghrib: true, Isha: true } },
+  adhan: { enabled: false, voice: 'makkah', prayers: { Fajr: true, Dhuhr: true, Asr: true, Maghrib: true, Isha: true } },
 };
 
 export function AppProvider({ children }) {

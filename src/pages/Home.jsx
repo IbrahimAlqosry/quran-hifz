@@ -6,6 +6,7 @@ import { useApp } from '../context/AppContext';
 import { useT } from '../i18n';
 import { ErrorBox, Loader } from '../components/Status';
 import DailyAyah from '../components/DailyAyah';
+import TodayPanel from '../components/TodayPanel';
 import { normalizeArabic } from '../utils/arabic';
 
 const TILES = [
@@ -54,7 +55,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="hero rounded-4 p-4 mb-4 text-white shadow-sm">
+      <TodayPanel />
+
+      <div className="hero rounded-4 p-4 mb-4 text-white shadow-sm d-none d-lg-block">
         <h1 className="h3 fw-bold mb-2">{t('heroTitle')}</h1>
         <p className="mb-3 opacity-75">{t('heroText')}</p>
         <div className="d-flex flex-wrap gap-2 small align-items-center">
@@ -69,6 +72,7 @@ export default function Home() {
         </div>
       </div>
 
+      <h2 className="section-label">{t('sections')}</h2>
       <div className="row g-2 mb-4">
         {TILES.map(([to0, icon, key]) => { const to = key === 'nav.mushaf' ? `/mushaf/${settings.lastPage || 1}` : to0; return (
           <div className="col-3 col-md-2 col-xl-1-5" key={to}>
@@ -84,6 +88,7 @@ export default function Home() {
 
       <DailyAyah />
 
+      <h2 className="section-label mt-2">{t('surahIndex')}</h2>
       <div className="row g-2 mb-3">
         <div className="col-md-8">
           <input className="form-control" placeholder={t('searchSurah')} value={q} onChange={(e) => setQ(e.target.value)} />

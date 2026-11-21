@@ -1,6 +1,19 @@
-// مشغّل الأذان — ملفات صوتية من islamcan.com
-export const ADHAN_VOICES = [1, 2, 3, 4, 5, 6, 7, 8];
-export const adhanUrl = (v) => `https://www.islamcan.com/audio/adhan/azan${v}.mp3`;
+// مشغّل الأذان — تسجيلات مشاهير المؤذنين (مستودع Athan-MP3 العام عبر jsDelivr)
+const CDN = 'https://cdn.jsdelivr.net/gh/abodehq/Athan-MP3@master/Sounds/';
+export const ADHAN_VOICES = [
+  { id: 'makkah', group: 'sa', file: 'Athan Makkah.mp3', name: { ar: 'أذان الحرم المكي', en: 'Masjid al-Haram, Makkah' } },
+  { id: 'zahrani', group: 'sa', file: 'Athan Mansoor Az-Zahrani.mp3', name: { ar: 'منصور الزهراني', en: 'Mansour Az-Zahrani' } },
+  { id: 'qatami', group: 'sa', file: 'Athan Nasser Alqatami.mp3', name: { ar: 'ناصر القطامي', en: 'Nasser Al-Qatami' } },
+  { id: 'malki', group: 'sa', file: 'Athan Hamdan Almalki.mp3', name: { ar: 'حمدان المالكي', en: 'Hamdan Al-Malki' } },
+  { id: 'deghreri', group: 'sa', file: 'Athan Hamad Deghreri.mp3', name: { ar: 'حمد الدغريري', en: 'Hamad Ad-Deghreri' } },
+  { id: 'abdulbasit', group: 'eg', file: 'Athan Abed Albase6.mp3', name: { ar: 'عبد الباسط عبد الصمد', en: 'Abdul Basit Abdus-Samad' } },
+  { id: 'refaat', group: 'eg', file: 'Athan Mohammad Ref3at.mp3', name: { ar: 'الشيخ محمد رفعت', en: 'Sheikh Mohamed Refaat' } },
+  { id: 'minshawi', group: 'eg', file: 'Athan Mohammad Almenshawy.mp3', name: { ar: 'محمد صديق المنشاوي', en: 'Mohamed Siddiq Al-Minshawi' } },
+  { id: 'nuaina', group: 'eg', file: 'Athan Ahmad Nuyne3.mp3', name: { ar: 'أحمد نعينع', en: 'Ahmed Nuaina' } },
+  { id: 'alafasy', group: 'other', file: 'Athan Mishary Alafasi.mp3', name: { ar: 'مشاري العفاسي (الكويت)', en: 'Mishary Alafasy (Kuwait)' } },
+];
+const voice = (v) => ADHAN_VOICES.find((x) => x.id === v) || ADHAN_VOICES[0];
+export const adhanUrl = (v) => CDN + encodeURIComponent(voice(v).file);
 
 export const ADHAN_DUA =
   'اللَّهُمَّ رَبَّ هَذِهِ الدَّعْوَةِ التَّامَّةِ، وَالصَّلَاةِ الْقَائِمَةِ، آتِ مُحَمَّدًا الْوَسِيلَةَ وَالْفَضِيلَةَ، وَابْعَثْهُ مَقَامًا مَحْمُودًا الَّذِي وَعَدْتَهُ';

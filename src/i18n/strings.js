@@ -1,6 +1,9 @@
 // نصوص الواجهة لكل اللغات — المفاتيح الناقصة في أي لغة ترجع للإنجليزية تلقائيًا
 
 const ar = {
+  devBy: 'تطوير: إبراهيم أحمد القصري', devPrayer: 'لا تنسونا من صالح دعائكم',
+  greetMorning: 'صباح الخير 🌤', greetDay: 'السلام عليكم ☀️', greetEvening: 'مساء الخير 🌙', nowTime: 'وقتها الآن', inTime: 'بعد {h} س {m} د', newPortion: 'احفظ مقطعًا جديدًا', tasbeehSub: 'سبّح الآن', surahIndex: 'فهرس السور', sections: 'الأقسام',
+  adhanEg: 'مشايخ مصر', adhanSa: 'الحرمين والسعودية', adhanOther: 'أخرى',
   'tab.home': 'الرئيسية', 'tab.mushaf': 'المصحف', 'tab.prayer': 'الصلاة', 'tab.adhkar': 'الأذكار', settings: 'الإعدادات', language: 'اللغة', privacy: 'سياسة الخصوصية',
   'grp.quran': 'القرآن', 'grp.worship': 'العبادة والذكر', 'grp.knowledge': 'العلم', 'grp.fiqh': 'الفقه والمعاملات',
   'nav.mushaf': 'المصحف بالصفحات', 'nav.khatma': 'خطة الختمة', 'nav.hadith': 'الأحاديث النبوية والقدسية', 'nav.names': 'أسماء الله الحسنى', 'nav.prophets': 'قصص الأنبياء',
@@ -105,6 +108,9 @@ const ar = {
 };
 
 const en = {
+  devBy: 'Developed by Ibrahim Ahmed Alqosry', devPrayer: 'Please remember us in your prayers',
+  greetMorning: 'Good morning 🌤', greetDay: 'Assalamu alaikum ☀️', greetEvening: 'Good evening 🌙', nowTime: 'It’s time now', inTime: 'in {h}h {m}m', newPortion: 'Memorize a new passage', tasbeehSub: 'Make tasbeeh', surahIndex: 'Surah index', sections: 'Sections',
+  adhanEg: 'Egypt', adhanSa: 'Haramain & Saudi Arabia', adhanOther: 'Other',
   'tab.home': 'Home', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Prayer', 'tab.adhkar': 'Adhkar', settings: 'Settings', language: 'Language', privacy: 'Privacy policy',
   'grp.quran': 'Quran', 'grp.worship': 'Worship & Dhikr', 'grp.knowledge': 'Knowledge', 'grp.fiqh': 'Fiqh & Giving',
   'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Khatm Planner', 'nav.hadith': 'Hadith & Hadith Qudsi', 'nav.names': 'Names of Allah', 'nav.prophets': 'Stories of the Prophets',
@@ -205,6 +211,9 @@ const en = {
 };
 
 const fr = {
+  devBy: 'Développé par Ibrahim Ahmed Alqosry', devPrayer: 'N’oubliez pas de faire des invocations pour nous',
+  greetMorning: 'Bonjour 🌤', greetDay: 'Assalamou alaykoum ☀️', greetEvening: 'Bonsoir 🌙', nowTime: 'C’est le moment', inTime: 'dans {h} h {m} min', newPortion: 'Mémoriser un passage', tasbeehSub: 'Faire le tasbih', surahIndex: 'Index des sourates', sections: 'Rubriques',
+  adhanEg: 'Égypte', adhanSa: 'Haramain & Arabie saoudite', adhanOther: 'Autres',
   'tab.home': 'Accueil', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Prière', 'tab.adhkar': 'Adhkar', settings: 'Paramètres', language: 'Langue', privacy: 'Confidentialité',
   'grp.quran': 'Coran', 'grp.worship': 'Adoration', 'grp.knowledge': 'Science', 'grp.fiqh': 'Fiqh & dons',
   'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Plan de lecture', 'nav.hadith': 'Hadiths & hadiths qudsi', 'nav.names': 'Noms d’Allah', 'nav.prophets': 'Histoires des prophètes',
@@ -303,6 +312,9 @@ const fr = {
 };
 
 const ur = {
+  devBy: 'تیار کردہ: ابراہیم احمد القصری', devPrayer: 'اپنی دعاؤں میں یاد رکھیں',
+  greetMorning: 'صبح بخیر 🌤', greetDay: 'السلام علیکم ☀️', greetEvening: 'شام بخیر 🌙', nowTime: 'ابھی کا وقت', inTime: '{h} گھنٹے {m} منٹ میں', newPortion: 'نیا حصہ حفظ کریں', tasbeehSub: 'تسبیح کریں', surahIndex: 'فہرستِ سور', sections: 'شعبے',
+  adhanEg: 'مصر', adhanSa: 'حرمین و سعودی عرب', adhanOther: 'دیگر',
   'tab.home': 'ہوم', 'tab.mushaf': 'مصحف', 'tab.prayer': 'نماز', 'tab.adhkar': 'اذکار', settings: 'ترتیبات', language: 'زبان', privacy: 'رازداری کی پالیسی',
   'grp.quran': 'قرآن', 'grp.worship': 'عبادت و ذکر', 'grp.knowledge': 'علم', 'grp.fiqh': 'فقہ',
   'nav.mushaf': 'مصحف (صفحات)', 'nav.khatma': 'ختم کا منصوبہ', 'nav.hadith': 'احادیث نبویہ و قدسیہ', 'nav.names': 'اسمائے حسنیٰ', 'nav.prophets': 'قصص الانبیاء',
@@ -400,6 +412,9 @@ const ur = {
 };
 
 const id = {
+  devBy: 'Dikembangkan oleh Ibrahim Ahmed Alqosry', devPrayer: 'Mohon doakan kami',
+  greetMorning: 'Selamat pagi 🌤', greetDay: 'Assalamu’alaikum ☀️', greetEvening: 'Selamat malam 🌙', nowTime: 'Waktunya sekarang', inTime: '{h} j {m} m lagi', newPortion: 'Hafalkan bagian baru', tasbeehSub: 'Bertasbih', surahIndex: 'Daftar surah', sections: 'Menu',
+  adhanEg: 'Mesir', adhanSa: 'Haramain & Arab Saudi', adhanOther: 'Lainnya',
   'tab.home': 'Beranda', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Salat', 'tab.adhkar': 'Dzikir', settings: 'Pengaturan', language: 'Bahasa', privacy: 'Kebijakan privasi',
   'grp.quran': 'Al-Quran', 'grp.worship': 'Ibadah & Dzikir', 'grp.knowledge': 'Ilmu', 'grp.fiqh': 'Fikih',
   'nav.mushaf': 'Mushaf (halaman)', 'nav.khatma': 'Rencana Khatam', 'nav.hadith': 'Hadis & Hadis Qudsi', 'nav.names': 'Asmaul Husna', 'nav.prophets': 'Kisah Para Nabi',
@@ -497,6 +512,9 @@ const id = {
 };
 
 const tr = {
+  devBy: 'Geliştiren: Ibrahim Ahmed Alqosry', devPrayer: 'Lütfen bizi dualarınızda unutmayın',
+  greetMorning: 'Günaydın 🌤', greetDay: 'Esselâmü aleyküm ☀️', greetEvening: 'İyi akşamlar 🌙', nowTime: 'Vakti şimdi', inTime: '{h} sa {m} dk sonra', newPortion: 'Yeni bölüm ezberle', tasbeehSub: 'Tesbih çek', surahIndex: 'Sure listesi', sections: 'Bölümler',
+  adhanEg: 'Mısır', adhanSa: 'Haremeyn & Suudi Arabistan', adhanOther: 'Diğer',
   'tab.home': 'Ana sayfa', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Namaz', 'tab.adhkar': 'Zikir', settings: 'Ayarlar', language: 'Dil', privacy: 'Gizlilik politikası',
   'grp.quran': 'Kur’an', 'grp.worship': 'İbadet & Zikir', 'grp.knowledge': 'İlim', 'grp.fiqh': 'Fıkıh',
   'nav.mushaf': 'Mushaf (sayfa)', 'nav.khatma': 'Hatim Planı', 'nav.hadith': 'Hadisler & Kudsî Hadisler', 'nav.names': 'Esmâü’l-Hüsnâ', 'nav.prophets': 'Peygamber Kıssaları',

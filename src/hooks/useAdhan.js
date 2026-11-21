@@ -60,7 +60,7 @@ export default function useAdhan() {
         const name = t('p.' + p);
         notify(t('adhanNow', { p: name }), timings[p]);
         const a = getAudio();
-        a.src = adhanUrl(cfg.voice || 1);
+        a.src = adhanUrl(cfg.voice);
         a.currentTime = 0;
         a.onended = () => setCurrent((c) => (c ? { ...c, playing: false } : c));
         a.play().catch(() => {});

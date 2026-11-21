@@ -7,8 +7,8 @@ const PRAYERS = ['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'];
 
 export default function AdhanSettings() {
   const { settings, updateSettings } = useApp();
-  const { t, num } = useT();
-  const cfg = settings.adhan || { enabled: false, voice: 1, prayers: {} };
+  const { t, pick } = useT();
+  const cfg = settings.adhan || { enabled: false, voice: 'makkah', prayers: {} };
   const [previewing, setPreviewing] = useState(false);
 
   const set = (patch) => updateSettings({ adhan: { ...cfg, ...patch } });
@@ -48,8 +48,12 @@ export default function AdhanSettings() {
         <div className="col-8">
           <label className="form-label small mb-1">{t('adhanVoice')}</label>
           <select className="form-select form-select-sm" value={cfg.voice}
-            onChange={(e) => { getAudio().pause(); setPreviewing(false); set({ voice: Number(e.target.value) }); }}>
-            {ADHAN_VOICES.map((v) => <option key={v} value={v}>{t('adhanVoiceN', { n: num(v) })}</option>)}
+            onChange={(e) => { getAudio().pause(); setPreviewing(false); set({ voice: e.target.value }); }}>
+            {[['eg', 'adhanEg'], ['sa', 'adhanSa'], ['other', 'adhanOther']].map(([g, k]) => (
+              <optgroup key={g} label={t(k)}>
+                {ADHAN_VOICES.filter((v) => v.group === g).map((v) => <option key={v.id} value={v.id}>{pick(v.name)}</option>)}
+              </optgroup>
+            ))}
           </select>
         </div>
         <div className="col-4">

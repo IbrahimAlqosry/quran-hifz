@@ -66,7 +66,13 @@ export default function More() {
           <a href="./privacy.html" className="list-group-item list-group-item-action">🔒 {t('privacy')}</a>
         </div>
       </section>
-      <p className="text-center small text-muted">{t('footer')}</p>
+      <div className="text-center small text-muted pb-2">
+        <img src="./icon-192.png" alt="" width="56" height="56" className="rounded-4 mb-2 shadow-sm" />
+        <div className="fw-bold text-body">{t('appName')}</div>
+        <div>{t('devBy')}</div>
+        <div className="mb-2">{t('devPrayer')} 🤍</div>
+        <div>{t('footer')}</div>
+      </div>
     </>
   );
 }
