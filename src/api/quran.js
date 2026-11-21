@@ -171,3 +171,8 @@ export async function getPage(page) {
 }
 
 export const TOTAL_PAGES = 604;
+
+/** سورة كاملة بعدة إصدارات (بدون تخزين دائم لكبر الحجم) */
+export function getSurahEditions(number, editions) {
+  return get(`/surah/${number}/editions/${editions.join(',')}`, { persist: false });
+}

@@ -293,3 +293,26 @@ body {
 .tone-gold { background: linear-gradient(160deg, rgba(246,220,138,.35), var(--bs-body-bg) 70%); }
 .tone-green { background: linear-gradient(160deg, rgba(25,135,84,.18), var(--bs-body-bg) 70%); }
 .tone-blue { background: linear-gradient(160deg, rgba(13,110,253,.12), var(--bs-body-bg) 70%); }
+
+/* ===== قصص الأنبياء ===== */
+.story-intro-card { display: flex; gap: .8rem; align-items: center; padding: .9rem 1rem; border-radius: 1.2rem; color: #fff;
+  background: linear-gradient(135deg, #5a3e0f, #a8761d 60%, #d9ac45); }
+.prophet-card { border: 0; color: inherit; border-radius: 1.1rem; }
+.prophet-num { width: 46px; height: 46px; flex-shrink: 0; border-radius: 14px; display: grid; place-items: center; font-weight: 700;
+  color: #fff; background: linear-gradient(135deg, var(--quran-green), #2f8f63); }
+.story-hero { padding: 1.2rem 1.3rem; border-radius: 1.4rem; color: #fff; line-height: 1.9;
+  background: radial-gradient(circle at 85% 0%, rgba(246,220,138,.35), transparent 50%), linear-gradient(135deg, #0f5132, #1d7a50); }
+.story-chapter { font-size: 1.05rem; font-weight: 700; color: var(--quran-green-2); display: flex; align-items: center; margin: .6rem 0; padding: .3rem; border-radius: .6rem; }
+[data-bs-theme='dark'] .story-chapter { color: #7fd1a8; }
+.story-ayah { border: 0; border-inline-start: 4px solid transparent; cursor: pointer; transition: background .2s; }
+.story-now { background: rgba(246,220,138,.22) !important; border-inline-start-color: var(--quran-gold) !important; }
+.story-page { padding-bottom: 90px; }
+.story-player {
+  position: fixed; z-index: 1040; left: 50%; transform: translateX(-50%); bottom: 1rem; width: min(720px, calc(100% - 1.5rem));
+  display: flex; align-items: center; gap: .5rem; padding: .55rem .7rem; border-radius: 1.2rem; color: #fff;
+  background: linear-gradient(135deg, #0b3d26, #146c43); border: 1px solid rgba(246,220,138,.5);
+}
+@media (max-width: 991.98px) { .story-player { bottom: calc(70px + env(safe-area-inset-bottom)); } }
+.story-play { width: 46px; height: 46px; flex-shrink: 0; border-radius: 50%; border: 0; font-size: 1.2rem; background: #f6dc8a; color: #0b3d26; }
+.story-select { width: auto; max-width: 130px; background-color: rgba(255,255,255,.92); }
+.min-w-0 { min-width: 0; }

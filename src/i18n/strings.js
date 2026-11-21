@@ -1,6 +1,7 @@
 // نصوص الواجهة لكل اللغات — المفاتيح الناقصة في أي لغة ترجع للإنجليزية تلقائيًا
 
 const ar = {
+  storyOf: 'قصة', noVoice: 'لا يوجد صوت عربي للنطق على جهازك — ثبّته من إعدادات الهاتف: اللغة والإدخال ← تحويل النص إلى كلام ← Google ← العربية. أو اختر «تلاوة فقط».', storySource: 'القصص من آيات القرآن الكريم، والرواية من التفسير الميسر (مجمع الملك فهد) — بلا إسرائيليات.', chapterN: 'الفصل {n}', listenStory: 'استمع للقصة', 'storyMode.narrate': 'رواية', 'storyMode.both': 'تلاوة + رواية', 'storyMode.recite': 'تلاوة فقط', storiesHeadline: 'قصص الأنبياء بصوت الراوي', chaptersCount: '{n} فصول',
   devBy: 'تطوير: إبراهيم أحمد القصري', devPrayer: 'لا تنسونا من صالح دعائكم',
   greetMorning: 'صباح الخير 🌤', greetDay: 'السلام عليكم ☀️', greetEvening: 'مساء الخير 🌙', nowTime: 'وقتها الآن', inTime: 'بعد {h} س {m} د', newPortion: 'احفظ مقطعًا جديدًا', tasbeehSub: 'سبّح الآن', surahIndex: 'فهرس السور', sections: 'الأقسام',
   adhanEg: 'مشايخ مصر', adhanSa: 'الحرمين والسعودية', adhanOther: 'أخرى',
@@ -108,6 +109,7 @@ const ar = {
 };
 
 const en = {
+  storyOf: 'The story of', noVoice: 'No voice for this language is installed on your device — add one in your phone’s Text-to-speech settings, or choose “Recitation only”.', storySource: 'Stories are told from the verses of the Quran, narrated with Tafsir Al-Muyassar / the selected translation — no Isra’iliyyat.', chapterN: 'Chapter {n}', listenStory: 'Listen to the story', 'storyMode.narrate': 'Narration', 'storyMode.both': 'Recitation + narration', 'storyMode.recite': 'Recitation only', storiesHeadline: 'Prophets’ stories, narrated', chaptersCount: '{n} chapters',
   devBy: 'Developed by Ibrahim Ahmed Alqosry', devPrayer: 'Please remember us in your prayers',
   greetMorning: 'Good morning 🌤', greetDay: 'Assalamu alaikum ☀️', greetEvening: 'Good evening 🌙', nowTime: 'It’s time now', inTime: 'in {h}h {m}m', newPortion: 'Memorize a new passage', tasbeehSub: 'Make tasbeeh', surahIndex: 'Surah index', sections: 'Sections',
   adhanEg: 'Egypt', adhanSa: 'Haramain & Saudi Arabia', adhanOther: 'Other',
@@ -211,6 +213,7 @@ const en = {
 };
 
 const fr = {
+  storyOf: 'L’histoire de', noVoice: 'Aucune voix pour cette langue sur votre appareil — ajoutez-en une dans les paramètres de synthèse vocale.', storySource: 'Histoires racontées à partir des versets du Coran et de leur traduction.', chapterN: 'Chapitre {n}', listenStory: 'Écouter l’histoire', 'storyMode.narrate': 'Narration', 'storyMode.both': 'Récitation + narration', 'storyMode.recite': 'Récitation seule', storiesHeadline: 'Histoires des prophètes, racontées', chaptersCount: '{n} chapitres',
   devBy: 'Développé par Ibrahim Ahmed Alqosry', devPrayer: 'N’oubliez pas de faire des invocations pour nous',
   greetMorning: 'Bonjour 🌤', greetDay: 'Assalamou alaykoum ☀️', greetEvening: 'Bonsoir 🌙', nowTime: 'C’est le moment', inTime: 'dans {h} h {m} min', newPortion: 'Mémoriser un passage', tasbeehSub: 'Faire le tasbih', surahIndex: 'Index des sourates', sections: 'Rubriques',
   adhanEg: 'Égypte', adhanSa: 'Haramain & Arabie saoudite', adhanOther: 'Autres',
@@ -312,6 +315,7 @@ const fr = {
 };
 
 const ur = {
+  storyOf: 'قصہ', noVoice: 'آپ کے آلے پر اس زبان کی آواز موجود نہیں — فون کی ٹیکسٹ ٹو اسپیچ ترتیبات سے انسٹال کریں۔', storySource: 'قصے قرآن کی آیات اور ان کے ترجمے سے بیان کیے گئے ہیں۔', chapterN: 'باب {n}', listenStory: 'قصہ سنیں', 'storyMode.narrate': 'بیان', 'storyMode.both': 'تلاوت + بیان', 'storyMode.recite': 'صرف تلاوت', storiesHeadline: 'انبیاء کے قصے آواز میں', chaptersCount: '{n} ابواب',
   devBy: 'تیار کردہ: ابراہیم احمد القصری', devPrayer: 'اپنی دعاؤں میں یاد رکھیں',
   greetMorning: 'صبح بخیر 🌤', greetDay: 'السلام علیکم ☀️', greetEvening: 'شام بخیر 🌙', nowTime: 'ابھی کا وقت', inTime: '{h} گھنٹے {m} منٹ میں', newPortion: 'نیا حصہ حفظ کریں', tasbeehSub: 'تسبیح کریں', surahIndex: 'فہرستِ سور', sections: 'شعبے',
   adhanEg: 'مصر', adhanSa: 'حرمین و سعودی عرب', adhanOther: 'دیگر',
@@ -412,6 +416,7 @@ const ur = {
 };
 
 const id = {
+  storyOf: 'Kisah', noVoice: 'Suara untuk bahasa ini belum terpasang — tambahkan di pengaturan Text-to-speech ponsel.', storySource: 'Kisah dituturkan dari ayat-ayat Al-Quran dan terjemahannya.', chapterN: 'Bab {n}', listenStory: 'Dengarkan kisahnya', 'storyMode.narrate': 'Narasi', 'storyMode.both': 'Tilawah + narasi', 'storyMode.recite': 'Tilawah saja', storiesHeadline: 'Kisah para nabi dengan narasi suara', chaptersCount: '{n} bab',
   devBy: 'Dikembangkan oleh Ibrahim Ahmed Alqosry', devPrayer: 'Mohon doakan kami',
   greetMorning: 'Selamat pagi 🌤', greetDay: 'Assalamu’alaikum ☀️', greetEvening: 'Selamat malam 🌙', nowTime: 'Waktunya sekarang', inTime: '{h} j {m} m lagi', newPortion: 'Hafalkan bagian baru', tasbeehSub: 'Bertasbih', surahIndex: 'Daftar surah', sections: 'Menu',
   adhanEg: 'Mesir', adhanSa: 'Haramain & Arab Saudi', adhanOther: 'Lainnya',
@@ -512,6 +517,7 @@ const id = {
 };
 
 const tr = {
+  storyOf: 'Kıssası:', noVoice: 'Cihazınızda bu dil için ses yok — telefonun Metin okuma ayarlarından ekleyin.', storySource: 'Kıssalar Kur’an ayetleri ve mealinden anlatılır.', chapterN: 'Bölüm {n}', listenStory: 'Kıssayı dinle', 'storyMode.narrate': 'Anlatım', 'storyMode.both': 'Tilavet + anlatım', 'storyMode.recite': 'Sadece tilavet', storiesHeadline: 'Sesli peygamber kıssaları', chaptersCount: '{n} bölüm',
   devBy: 'Geliştiren: Ibrahim Ahmed Alqosry', devPrayer: 'Lütfen bizi dualarınızda unutmayın',
   greetMorning: 'Günaydın 🌤', greetDay: 'Esselâmü aleyküm ☀️', greetEvening: 'İyi akşamlar 🌙', nowTime: 'Vakti şimdi', inTime: '{h} sa {m} dk sonra', newPortion: 'Yeni bölüm ezberle', tasbeehSub: 'Tesbih çek', surahIndex: 'Sure listesi', sections: 'Bölümler',
   adhanEg: 'Mısır', adhanSa: 'Haremeyn & Suudi Arabistan', adhanOther: 'Diğer',

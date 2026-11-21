@@ -18,6 +18,7 @@ import Sadaqah from './pages/Sadaqah';
 import Hadith from './pages/Hadith';
 import Names from './pages/Names';
 import Prophets from './pages/Prophets';
+import ProphetStory from './pages/ProphetStory';
 import Mushaf from './pages/Mushaf';
 import Khatma from './pages/Khatma';
 import More from './pages/More';
@@ -156,6 +157,7 @@ export default function App() {
           <Route path="/hadith/:book/:section" element={<Hadith />} />
           <Route path="/names" element={<Names />} />
           <Route path="/prophets" element={<Prophets />} />
+          <Route path="/prophets/:i" element={<ProphetStory />} />
           <Route path="/mushaf/:p" element={<Mushaf />} />
           <Route path="/khatma" element={<Khatma />} />
           <Route path="/more" element={<More />} />
