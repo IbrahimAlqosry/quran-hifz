@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { getTranslationEditions, RECITERS, TAFSIRS } from '../api/quran';
+import { getReciter, getTranslationEditions, RECITERS, TAFSIRS } from '../api/quran';
 import useAsync from '../hooks/useAsync';
 import { useApp } from '../context/AppContext';
 import { useT } from '../i18n';
@@ -61,8 +61,14 @@ export default function SettingsBar({ showTafsir = true, showTranslation = true 
         <div className={col}>
           <label className="form-label small mb-1">{t('reciter')}</label>
           <select className="form-select form-select-sm" value={settings.reciter} onChange={(e) => updateSettings({ reciter: e.target.value })}>
-            {RECITERS.map((r) => <option key={r.id} value={r.id}>{pick(r.name)}</option>)}
+            <optgroup label={t('reciterPerAyah')}>
+              {RECITERS.filter((r) => !r.surahOnly).map((r) => <option key={r.id} value={r.id}>{pick(r.name)}</option>)}
+            </optgroup>
+            <optgroup label={t('reciterSurahOnly')}>
+              {RECITERS.filter((r) => r.surahOnly).map((r) => <option key={r.id} value={r.id}>{pick(r.name)}</option>)}
+            </optgroup>
           </select>
+          {getReciter(settings.reciter).surahOnly && <div className="small text-muted mt-1">{t('surahOnlyNote')}</div>}
         </div>
         <div className={col}>
           <label className="form-label small mb-1">{t('fontSize')}: {num(settings.fontSize)}</label>

@@ -1,5 +1,15 @@
 // مواقيت الصلاة — AlAdhan API (مجاني وبدون مفتاح) https://aladhan.com/prayer-times-api
 const BASE = 'https://api.aladhan.com/v1';
+const cache = new Map();
+
+export const DEFAULT_LOCATION = { city: 'Cairo', country: 'Egypt' };
+
+export function toDate(hhmm, base = new Date()) {
+  const [h, m] = hhmm.split(':').map(Number);
+  const d = new Date(base);
+  d.setHours(h, m, 0, 0);
+  return d;
+}
 
 /** طرق الحساب الأشهر */
 export const METHODS = [
@@ -34,6 +44,7 @@ export async function getPrayerTimes(location, method = 5, date = new Date()) {
       ? `/timings/${dateStr(date)}?latitude=${location.lat}&longitude=${location.lng}&method=${method}`
       : `/timingsByCity/${dateStr(date)}?city=${encodeURIComponent(location.city)}&country=${encodeURIComponent(location.country || '')}&method=${method}`;
 
+  if (cache.has(q)) return cache.get(q);
   const res = await fetch(BASE + q);
   const json = await res.json().catch(() => null);
   if (!res.ok || !json || json.code !== 200) throw new Error(json?.data || `HTTP ${res.status}`);
@@ -43,7 +54,7 @@ export async function getPrayerTimes(location, method = 5, date = new Date()) {
   PRAYERS.forEach((p) => {
     clean[p] = String(timings[p] || '').slice(0, 5);
   });
-  return {
+  const result = {
     timings: clean,
     hijri: d?.hijri,
     gregorian: d?.gregorian,
@@ -51,6 +62,8 @@ export async function getPrayerTimes(location, method = 5, date = new Date()) {
     lat: Number(meta?.latitude ?? location.lat),
     lng: Number(meta?.longitude ?? location.lng),
   };
+  cache.set(q, result);
+  return result;
 }
 
 /** اتجاه القبلة (بالدرجات من الشمال الحقيقي) — حساب محلي بدون إنترنت */

@@ -186,3 +186,14 @@ body {
 [data-bs-theme='dark'] .ayah-current { background: #3a3315 !important; }
 [data-bs-theme='dark'] .surah-num, [data-bs-theme='dark'] .surah-title, [data-bs-theme='dark'] .basmala { color: #7fd1a8; }
 [data-bs-theme='dark'] table.bg-white { background: transparent !important; }
+
+/* شريط الأذان */
+.adhan-banner {
+  position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 1080;
+  width: min(560px, calc(100% - 2rem)); background: linear-gradient(135deg, var(--quran-green), #1d7a50);
+  color: #fff; border-radius: 1rem; padding: .9rem 1.1rem; border: 2px solid var(--quran-gold);
+}
+.adhan-dua { font-size: 1.15rem; line-height: 1.9; }
+
+@media (min-width: 1200px) { .col-xl-1-5 { flex: 0 0 auto; width: 12.5%; } }
+.zakat-result { border: 2px solid var(--quran-gold); }

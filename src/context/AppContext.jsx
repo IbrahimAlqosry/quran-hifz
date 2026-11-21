@@ -21,6 +21,7 @@ const DEFAULT_SETTINGS = {
   location: null, // { lat, lng, city, country }
   prayerMethod: 5, // الهيئة المصرية العامة للمساحة
   lastRead: null, // { surah, ayah }
+  adhan: { enabled: false, voice: 1, prayers: { Fajr: true, Dhuhr: true, Asr: true, Maghrib: true, Isha: true } },
 };
 
 export function AppProvider({ children }) {

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
-import { getSurah, getTafsir, getTranslation, TAFSIRS } from '../api/quran';
+import { getReciter, getSurah, getTafsir, getTranslation, surahAudioUrl, TAFSIRS } from '../api/quran';
 import useAsync from '../hooks/useAsync';
 import { useApp } from '../context/AppContext';
 import { useT } from '../i18n';
@@ -65,13 +65,26 @@ export default function SurahReader() {
     document.getElementById(`ayah-${ayahNum}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   };
 
+  const [notice, setNotice] = useState('');
+  const playSurah = () => {
+    const rec = getReciter(settings.reciter);
+    if (!rec.surahOnly) return playAyah(1, true);
+    const url = surahAudioUrl(settings.reciter, n);
+    if (!url) return setNotice(t('reciterNoSurah'));
+    setNotice('');
+    setContinuous(false);
+    setPlaying('full');
+    audioRef.current.src = url;
+    audioRef.current.play().catch(() => setPlaying(null));
+  };
+
   const stop = () => {
     audioRef.current?.pause();
     setPlaying(null);
   };
 
   const onEnded = () => {
-    if (continuous && playing && playing < surah.data.numberOfAyahs) playAyah(playing + 1, true);
+    if (continuous && typeof playing === 'number' && playing < surah.data.numberOfAyahs) playAyah(playing + 1, true);
     else setPlaying(null);
   };
 
@@ -106,7 +119,7 @@ export default function SurahReader() {
               {playing ? (
                 <button className="btn btn-sm btn-danger" onClick={stop}>■ {t('stop')}</button>
               ) : (
-                <button className="btn btn-sm btn-success" onClick={() => playAyah(1, true)}>▶ {t('playSurah')}</button>
+                <button className="btn btn-sm btn-success" onClick={playSurah}>▶ {t('playSurah')}</button>
               )}
               <button className={'btn btn-sm ' + (showAll ? 'btn-warning' : 'btn-outline-warning')} onClick={() => setShowAll((v) => !v)}>
                 {showAll ? t('hideTafsir') : t('showAllTafsir')}
@@ -121,6 +134,9 @@ export default function SurahReader() {
               )}
             </div>
           </div>
+
+          {notice && <div className="alert alert-info py-2 small">{notice}</div>}
+          {playing === 'full' && <div className="alert alert-success py-2 small text-center">🔊 {pick(getReciter(settings.reciter).name)}</div>}
 
           {n !== 1 && n !== 9 && <div className="basmala quran-font" dir="rtl">بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>}
 

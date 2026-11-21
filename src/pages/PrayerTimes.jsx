@@ -1,18 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
-import { distanceToMakkah, getPrayerTimes, METHODS, PRAYERS, qiblaDirection } from '../api/prayer';
+import { DEFAULT_LOCATION, distanceToMakkah, getPrayerTimes, METHODS, PRAYERS, qiblaDirection, toDate } from '../api/prayer';
+import AdhanSettings from '../components/AdhanSettings';
 import useAsync from '../hooks/useAsync';
 import { useApp } from '../context/AppContext';
 import { useT } from '../i18n';
 import { ErrorBox, Loader } from '../components/Status';
 
-const DEFAULT_LOCATION = { city: 'Cairo', country: 'Egypt' };
-
-function toDate(hhmm, base = new Date()) {
-  const [h, m] = hhmm.split(':').map(Number);
-  const d = new Date(base);
-  d.setHours(h, m, 0, 0);
-  return d;
-}
 
 export default function PrayerTimes() {
   const { settings, updateSettings } = useApp();
@@ -170,6 +163,8 @@ export default function PrayerTimes() {
           </div>
         </div>
       )}
+
+      <AdhanSettings />
 
       <div className="card card-body shadow-sm">
         <h3 className="h6 fw-bold">{t('locationSettings')}</h3>

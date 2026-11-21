@@ -13,6 +13,9 @@ import Duas from './pages/Duas';
 import HajjUmrah from './pages/HajjUmrah';
 import Tasbeeh from './pages/Tasbeeh';
 import Search from './pages/Search';
+import Zakat from './pages/Zakat';
+import Sadaqah from './pages/Sadaqah';
+import AdhanBanner from './components/AdhanBanner';
 import { useApp } from './context/AppContext';
 import { DEFAULT_TRANSLATION, LANGS, useT } from './i18n';
 
@@ -54,6 +57,8 @@ export default function App() {
   const moreLinks = [
     ['/duas', 'nav.duas'],
     ['/hajj', 'nav.hajj'],
+    ['/zakat', 'nav.zakat'],
+    ['/sadaqah', 'nav.sadaqah'],
     ['/tasbeeh', 'nav.tasbeeh'],
     ['/search', 'nav.search'],
     ['/test', 'nav.test'],
@@ -120,9 +125,13 @@ export default function App() {
           <Route path="/hajj" element={<HajjUmrah />} />
           <Route path="/tasbeeh" element={<Tasbeeh />} />
           <Route path="/search" element={<Search />} />
+          <Route path="/zakat" element={<Zakat />} />
+          <Route path="/sadaqah" element={<Sadaqah />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
+
+      <AdhanBanner />
 
       <footer className="text-center text-muted small py-4 border-top">
         <div className="quran-font fs-6 mb-1" dir="rtl">﴿وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ﴾</div>

@@ -15,6 +15,8 @@ const TILES = [
   ['/hajj', '🕋', 'nav.hajj'],
   ['/tasbeeh', '🔢', 'nav.tasbeeh'],
   ['/search', '🔍', 'nav.search'],
+  ['/zakat', '💰', 'nav.zakat'],
+  ['/sadaqah', '🐑', 'nav.sadaqah'],
 ];
 
 export default function Home() {
@@ -64,7 +66,7 @@ export default function Home() {
 
       <div className="row g-2 mb-4">
         {TILES.map(([to, icon, key]) => (
-          <div className="col-4 col-md-2" key={to}>
+          <div className="col-3 col-md-2 col-xl-1-5" key={to}>
             <Link to={to} className="card tile text-center text-decoration-none h-100 shadow-sm">
               <div className="card-body p-2">
                 <div className="fs-3">{icon}</div>

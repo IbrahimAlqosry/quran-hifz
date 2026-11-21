@@ -14,13 +14,35 @@ export const TAFSIRS = [
   { id: 'ar.qurtubi', name: { ar: 'تفسير القرطبي', en: 'Al-Qurtubi' }, note: { ar: 'الجامع لأحكام القرآن — مطوّل', en: "Al-Jami' li-Ahkam al-Quran (detailed)" } },
 ];
 
-/** القرّاء — الحصري مناسب جدًا للتحفيظ لوضوح أدائه */
+/** القرّاء — بعضهم بتلاوة لكل آية (AlQuran Cloud)، وبعضهم بملف لكل سورة فقط (mp3quran.net) */
+const MP3 = 'https://cdn.mp3quran.net/audio/';
 export const RECITERS = [
-  { id: 'ar.husary', name: { ar: 'محمود خليل الحصري (مرتل)', en: 'Mahmoud Khalil Al-Husary' } },
-  { id: 'ar.minshawi', name: { ar: 'محمد صديق المنشاوي (مرتل)', en: 'Mohamed Siddiq Al-Minshawi' } },
-  { id: 'ar.alafasy', name: { ar: 'مشاري راشد العفاسي', en: 'Mishary Rashid Alafasy' } },
-  { id: 'ar.abdulbasitmurattal', name: { ar: 'عبد الباسط عبد الصمد (مرتل)', en: 'Abdul Basit Abdus Samad' } },
+  { id: 'ar.husary', name: { ar: 'محمود خليل الحصري (مرتل)', en: 'Al-Husary (Murattal)' } },
+  { id: 'ar.husarymujawwad', name: { ar: 'محمود خليل الحصري (مجوّد)', en: 'Al-Husary (Mujawwad)' } },
+  { id: 'ar.minshawi', name: { ar: 'محمد صديق المنشاوي (مرتل)', en: 'Al-Minshawi (Murattal)' } },
+  { id: 'ar.minshawimujawwad', name: { ar: 'محمد صديق المنشاوي (مجوّد)', en: 'Al-Minshawi (Mujawwad)' } },
+  { id: 'ar.abdulbasitmurattal', name: { ar: 'عبد الباسط عبد الصمد (مرتل)', en: 'Abdul Basit (Murattal)' } },
+  { id: 'ar.alafasy', name: { ar: 'مشاري راشد العفاسي', en: 'Mishary Alafasy' } },
+  { id: 'mp3:banna-r1', surahOnly: true, server: MP3 + 'mahmoud-banna/r1/', name: { ar: 'محمود علي البنا (مرتل)', en: 'Mahmoud Ali Al-Banna (Murattal)' } },
+  { id: 'mp3:banna-r2', surahOnly: true, server: MP3 + 'mahmoud-banna/r2/', name: { ar: 'محمود علي البنا (مجوّد)', en: 'Mahmoud Ali Al-Banna (Mujawwad)' } },
+  {
+    id: 'mp3:refaat', surahOnly: true, server: MP3 + 'muhammad-refaat/r1/',
+    surahs: [1, 10, 11, 12, 17, 18, 19, 20, 48, 54, 55, 56, 69, 72, 73, 75, 76, 77, 78, 79, 81, 82, 83, 85, 86, 87, 88, 89, 96, 98, 100],
+    name: { ar: 'الشيخ محمد رفعت', en: 'Sheikh Mohamed Refaat' },
+  },
 ];
+
+export const getReciter = (id) => RECITERS.find((r) => r.id === id) || RECITERS[0];
+
+/** القارئ المستخدم للتلاوة آية بآية (القرّاء بملف للسورة فقط → الحصري) */
+export const ayahReciter = (id) => (getReciter(id).surahOnly ? 'ar.husary' : getReciter(id).id);
+
+/** رابط تلاوة السورة كاملة للقرّاء بملف للسورة، أو null */
+export function surahAudioUrl(id, n) {
+  const r = getReciter(id);
+  if (!r.surahOnly || (r.surahs && !r.surahs.includes(n))) return null;
+  return r.server + String(n).padStart(3, '0') + '.mp3';
+}
 
 export const TOTAL_AYAHS = 6236;
 
@@ -72,7 +94,7 @@ export function getSurahList() {
 /** نص السورة (رسم عثماني + إملائي مبسط للمقارنة) + روابط الصوت لكل آية */
 export async function getSurah(number, reciter = 'ar.husary') {
   const [uthmani, simple, audio] = await get(
-    `/surah/${number}/editions/quran-uthmani,quran-simple-clean,${reciter}`
+    `/surah/${number}/editions/quran-uthmani,quran-simple-clean,${ayahReciter(reciter)}`
   );
 
   return {
