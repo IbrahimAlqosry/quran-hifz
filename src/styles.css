@@ -1,0 +1,118 @@
+:root {
+  --quran-green: #0f5132;
+  --quran-green-2: #146c43;
+  --quran-gold: #b8860b;
+  --paper: #fbf8f1;
+}
+
+body {
+  font-family: 'Cairo', system-ui, sans-serif;
+  background: var(--paper);
+}
+
+.bg-quran {
+  background: linear-gradient(90deg, var(--quran-green), var(--quran-green-2));
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--quran-green), #1d7a50 60%, #2f8f63);
+}
+
+.quran-font,
+.quran-text {
+  font-family: 'Amiri Quran', 'Amiri', 'Traditional Arabic', serif;
+}
+
+.quran-text {
+  line-height: 2.3;
+  text-align: justify;
+  color: #1f2d24;
+}
+
+.surah-title {
+  font-size: 2.4rem;
+  color: var(--quran-green);
+}
+
+.basmala {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--quran-green);
+  margin-bottom: 1.5rem;
+}
+
+.ayah-marker {
+  color: var(--quran-gold);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+.surah-card {
+  border: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.surah-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.5rem 1rem rgba(15, 81, 50, 0.15) !important;
+}
+
+.surah-num {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 2px solid var(--quran-gold);
+  color: var(--quran-green);
+  font-weight: 700;
+}
+
+.ayah-card {
+  border: 0;
+  border-right: 4px solid transparent;
+  transition: background 0.2s;
+}
+
+.ayah-current {
+  background: #fff6d6 !important;
+  border-right-color: var(--quran-gold) !important;
+  border-radius: 0.5rem;
+}
+
+.tafsir-box {
+  background: #f3f8f5;
+  border-right: 4px solid var(--quran-gold);
+  border-radius: 0.5rem;
+  padding: 0.9rem 1rem;
+}
+.tafsir-text {
+  line-height: 2;
+  font-size: 1.05rem;
+  white-space: pre-line;
+}
+
+.memo-ayah {
+  padding: 0.25rem 0.75rem;
+  border-right: 4px solid transparent;
+  margin-bottom: 0.5rem;
+}
+
+.ayah-hidden {
+  filter: blur(9px);
+  user-select: none;
+  cursor: pointer;
+}
+
+.cue-box {
+  background: #f6f2e7;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  opacity: 0.9;
+}
+
+.target-ayah {
+  background: #eef8f1;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
