@@ -27,6 +27,7 @@ body {
   line-height: 2.3;
   text-align: justify;
   color: #1f2d24;
+  direction: rtl;
 }
 
 .surah-title {
@@ -70,19 +71,19 @@ body {
 
 .ayah-card {
   border: 0;
-  border-right: 4px solid transparent;
+  border-inline-start: 4px solid transparent;
   transition: background 0.2s;
 }
 
 .ayah-current {
   background: #fff6d6 !important;
-  border-right-color: var(--quran-gold) !important;
+  border-inline-start-color: var(--quran-gold) !important;
   border-radius: 0.5rem;
 }
 
 .tafsir-box {
   background: #f3f8f5;
-  border-right: 4px solid var(--quran-gold);
+  border-inline-start: 4px solid var(--quran-gold);
   border-radius: 0.5rem;
   padding: 0.9rem 1rem;
 }
@@ -94,7 +95,7 @@ body {
 
 .memo-ayah {
   padding: 0.25rem 0.75rem;
-  border-right: 4px solid transparent;
+  border-inline-start: 4px solid transparent;
   margin-bottom: 0.5rem;
 }
 
@@ -116,3 +117,72 @@ body {
   border-radius: 0.5rem;
   padding: 0.5rem 1rem;
 }
+
+/* ===== إضافات: الأذكار، المواقيت، المسبحة، اللغات، الوضع الليلي ===== */
+.quran-text, .dhikr-text { direction: rtl; }
+.dhikr-text {
+  font-family: 'Amiri', 'Amiri Quran', 'Traditional Arabic', serif;
+  line-height: 2.1;
+  font-size: 1.35rem;
+}
+.translation-text {
+  color: var(--bs-secondary-color);
+  line-height: 1.8;
+  font-size: 1rem;
+  unicode-bidi: plaintext;
+}
+.lang-select { width: auto; min-width: 130px; }
+.tile { border: 0; color: inherit; transition: transform .15s; }
+.tile:hover { transform: translateY(-2px); }
+.daily-ayah { border: 0; border-inline-start: 4px solid var(--quran-gold); }
+
+.dhikr-card { border: 0; cursor: pointer; user-select: none; transition: transform .08s, opacity .2s; }
+.dhikr-card:active { transform: scale(.985); }
+.dhikr-done { opacity: .55; border-inline-start: 4px solid #198754; }
+.fadl { background: rgba(184, 134, 11, .1); border-radius: .4rem; padding: .4rem .6rem; }
+.counter-pill { color: #fff; border-radius: 2rem; min-width: 56px; padding: .25rem .8rem; text-align: center; font-weight: 700; }
+.sticky-progress { position: sticky; top: 64px; z-index: 5; background: var(--bs-body-bg); padding: .5rem 0; }
+
+.next-prayer { background: rgba(25, 135, 84, .1); border-radius: .75rem; padding: .4rem 1rem; }
+.active-prayer { background: rgba(25, 135, 84, .15) !important; font-weight: 700; }
+.compass {
+  width: 190px; height: 190px; margin: auto; border-radius: 50%; position: relative;
+  border: 4px solid var(--quran-gold); background: radial-gradient(circle, rgba(25,135,84,.08), transparent 70%);
+}
+.compass-n { position: absolute; top: 4px; left: 50%; transform: translateX(-50%); font-weight: 700; color: #dc3545; }
+.compass-arrow {
+  position: absolute; inset: 0; display: flex; justify-content: center; font-size: 2rem; transition: transform .3s ease-out;
+}
+.compass-arrow::after {
+  content: ''; position: absolute; top: 40px; width: 4px; height: 58px; background: var(--quran-green-2); border-radius: 2px;
+}
+
+.tasbeeh-btn {
+  width: 220px; height: 220px; border-radius: 50%; border: 6px solid var(--quran-gold);
+  background: radial-gradient(circle at 30% 30%, #2f8f63, var(--quran-green)); color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; margin: auto; transition: transform .1s;
+}
+.tasbeeh-btn.pulse { transform: scale(.95); }
+.tasbeeh-count { font-size: 3.5rem; font-weight: 700; line-height: 1; }
+.tasbeeh-target { opacity: .8; }
+
+.step-head { background: transparent; border: 0; width: 100%; }
+.step-num {
+  width: 30px; height: 30px; border-radius: 50%; background: var(--quran-green-2); color: #fff;
+  display: inline-grid; place-items: center; font-weight: 700; flex-shrink: 0;
+}
+.guide-list li { margin-bottom: .45rem; line-height: 1.8; }
+.dhikr-box { background: rgba(25, 135, 84, .08); border-radius: .5rem; padding: .6rem .9rem; }
+.search-hit { color: inherit; }
+.navbar .dropdown-menu { max-height: 70vh; overflow: auto; }
+.navbar .btn-link.nav-link { text-decoration: none; }
+
+/* الوضع الليلي */
+[data-bs-theme='dark'] body { background: #10171a; }
+[data-bs-theme='dark'] .quran-text { color: #e8efe9; }
+[data-bs-theme='dark'] .tafsir-box { background: #18242a; }
+[data-bs-theme='dark'] .cue-box { background: #1d262b; }
+[data-bs-theme='dark'] .target-ayah { background: #15302a; }
+[data-bs-theme='dark'] .ayah-current { background: #3a3315 !important; }
+[data-bs-theme='dark'] .surah-num, [data-bs-theme='dark'] .surah-title, [data-bs-theme='dark'] .basmala { color: #7fd1a8; }
+[data-bs-theme='dark'] table.bg-white { background: transparent !important; }

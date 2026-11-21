@@ -1,18 +1,26 @@
 import { createContext, useCallback, useContext, useMemo } from 'react';
 import useLocalStorage from '../hooks/useLocalStorage';
+import { DEFAULT_TRANSLATION, detectLang } from '../i18n/langs';
 
 const DAY = 24 * 60 * 60 * 1000;
 
 // نظام المراجعة المتباعدة (صناديق لايتنر): عدد الأيام حتى المراجعة التالية لكل مستوى
 export const INTERVALS = [0, 1, 3, 7, 14, 30, 60, 120];
-export const LEVEL_NAMES = ['جديد', 'بداية', 'قيد التثبيت', 'جيد', 'جيد جدًا', 'متقن', 'راسخ', 'راسخ جدًا'];
 
 const AppContext = createContext(null);
 
+const initialLang = detectLang();
 const DEFAULT_SETTINGS = {
+  lang: initialLang,
+  translation: DEFAULT_TRANSLATION[initialLang],
+  showTranslation: initialLang !== 'ar',
   tafsir: 'ar.muyassar',
   reciter: 'ar.husary',
   fontSize: 30,
+  theme: 'light',
+  location: null, // { lat, lng, city, country }
+  prayerMethod: 5, // الهيئة المصرية العامة للمساحة
+  lastRead: null, // { surah, ayah }
 };
 
 export function AppProvider({ children }) {
@@ -85,17 +93,7 @@ export function AppProvider({ children }) {
     return { memorized, due, surahsStarted: Object.keys(progress).length };
   }, [progress]);
 
-  const value = {
-    settings,
-    updateSettings,
-    progress,
-    setProgress,
-    markMemorized,
-    unmark,
-    grade,
-    stats,
-  };
-
+  const value = { settings, updateSettings, progress, setProgress, markMemorized, unmark, grade, stats };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
