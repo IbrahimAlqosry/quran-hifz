@@ -10,6 +10,7 @@ import { useT } from '../i18n';
 /** لوحة «يومك»: الصلاة القادمة + ما يناسب وقتك الآن (أذكار، وِرد، مراجعة، متابعة قراءة) */
 export default function TodayPanel() {
   const { settings, stats } = useApp();
+  const memPct = ((stats.memorized / 6236) * 100).toFixed(1);
   const { t, num, lang } = useT();
   const loc = settings.location || DEFAULT_LOCATION;
   const { data } = useAsync(() => getPrayerTimes(loc, settings.prayerMethod), [JSON.stringify(loc), settings.prayerMethod]);
@@ -70,24 +71,42 @@ export default function TodayPanel() {
 
   return (
     <div className="today mb-4">
-      <Link to="/prayer" className="today-hero text-decoration-none">
-        <div>
-          <div className="today-greet">{greet}</div>
-          {hijri && (
-            <div className="today-date">
-              {num(hijri.day)} {lang === 'ar' ? hijri.month?.ar : hijri.month?.en} {num(hijri.year)} {t('hijriSuffix')}
-            </div>
+      <div className="today-hero">
+        <div className="d-flex justify-content-between align-items-start gap-2 position-relative" style={{ zIndex: 1 }}>
+          <div>
+            <div className="today-greet">{greet}</div>
+            {hijri && (
+              <div className="today-date">
+                {lang === 'ar' ? hijri.weekday?.ar : hijri.weekday?.en} · {num(hijri.day)} {lang === 'ar' ? hijri.month?.ar : hijri.month?.en} {num(hijri.year)} {t('hijriSuffix')}
+              </div>
+            )}
+          </div>
+          {next && (
+            <Link to="/prayer" className="today-next text-decoration-none">
+              <div className="small opacity-75">{t('nextPrayer')}</div>
+              <div className="today-next-name">{t('p.' + next.p)}</div>
+              <div className="today-countdown">{t('inTime', { h: num(next.h), m: num(next.m) })}</div>
+            </Link>
           )}
         </div>
-        {next && (
-          <div className="today-next">
-            <div className="small opacity-75">{t('nextPrayer')}</div>
-            <div className="fs-4 fw-bold">{t('p.' + next.p)} <span className="font-monospace">{data.timings[next.p]}</span></div>
-            <div className="small">{t('inTime', { h: num(next.h), m: num(next.m) })}</div>
+        {data && (
+          <div className="prayer-chips">
+            {PRAYERS.filter((x) => x !== 'Sunrise').map((x) => (
+              <Link to="/prayer" key={x} className={'prayer-chip' + (next?.p === x ? ' active' : '')}>
+                <span>{t('p.' + x)}</span>
+                <b>{data.timings[x]}</b>
+              </Link>
+            ))}
           </div>
         )}
-      </Link>
+        <div className="hero-stats">
+          <Link to="/progress"><b>{num(stats.memorized)}</b><span>{t('statMemorized')} · {num(memPct)}%</span></Link>
+          <Link to="/test"><b>{num(stats.due.length)}</b><span>{t('statDue')}</span></Link>
+          <Link to="/khatma"><b>{wird ? `${num(Math.round((plan.done.length / plan.days) * 100))}%` : '—'}</b><span>{t('nav.khatma')}</span></Link>
+        </div>
+      </div>
 
+      <h2 className="section-label">{t('forYouNow')}</h2>
       <div className="today-cards">
         {cards.map((c) => (
           <Link key={c.title} to={c.to} className={`today-card tone-${c.tone}`}>

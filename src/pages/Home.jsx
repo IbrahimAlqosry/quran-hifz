@@ -10,19 +10,18 @@ import TodayPanel from '../components/TodayPanel';
 import { normalizeArabic } from '../utils/arabic';
 
 const TILES = [
-  ['/prayer', '🕌', 'nav.prayer'],
   ['/mushaf/1', '📗', 'nav.mushaf'],
-  ['/khatma', '📅', 'nav.khatma'],
-  ['/hadith', '📜', 'nav.hadith'],
-  ['/names', '✨', 'nav.names'],
-  ['/prophets', '📖', 'nav.prophets'],
+  ['/memorize/1', '🧠', 'nav.memorize'],
+  ['/prayer', '🕌', 'nav.prayer'],
   ['/adhkar', '📿', 'nav.adhkar'],
+  ['/prophets', '🎧', 'nav.prophets'],
+  ['/hadith', '📜', 'nav.hadith'],
   ['/duas', '🤲', 'nav.duas'],
+  ['/zakat', '💰', 'nav.zakat'],
   ['/hajj', '🕋', 'nav.hajj'],
   ['/tasbeeh', '🔢', 'nav.tasbeeh'],
-  ['/search', '🔍', 'nav.search'],
-  ['/zakat', '💰', 'nav.zakat'],
-  ['/sadaqah', '🐑', 'nav.sadaqah'],
+  ['/names', '✨', 'nav.names'],
+  ['/more', '☰', 'nav.more'],
 ];
 
 export default function Home() {
@@ -57,33 +56,17 @@ export default function Home() {
     <>
       <TodayPanel />
 
-      <div className="hero rounded-4 p-4 mb-4 text-white shadow-sm d-none d-lg-block">
-        <h1 className="h3 fw-bold mb-2">{t('heroTitle')}</h1>
-        <p className="mb-3 opacity-75">{t('heroText')}</p>
-        <div className="d-flex flex-wrap gap-2 small align-items-center">
-          <span className="badge bg-light text-dark p-2">{t('memorizedBadge', { n: num(stats.memorized), p: num(percent) })}</span>
-          <span className="badge bg-warning text-dark p-2">{t('dueBadge', { n: num(stats.due.length) })}</span>
-          {stats.due.length > 0 && <Link to="/test" className="btn btn-sm btn-light">{t('startReview')}</Link>}
-          {lastSurah && (
-            <Link to={`/surah/${last.surah}?a=${last.ayah}`} className="btn btn-sm btn-outline-light">
-              📌 {t('continueReading')}: {lang === 'ar' ? lastSurah.name : lastSurah.englishName} ({num(last.ayah)})
-            </Link>
-          )}
-        </div>
-      </div>
-
       <h2 className="section-label">{t('sections')}</h2>
-      <div className="row g-2 mb-4">
-        {TILES.map(([to0, icon, key]) => { const to = key === 'nav.mushaf' ? `/mushaf/${settings.lastPage || 1}` : to0; return (
-          <div className="col-3 col-md-2 col-xl-1-5" key={to}>
-            <Link to={to} className="card tile text-center text-decoration-none h-100 shadow-sm">
-              <div className="card-body p-2">
-                <div className="fs-3">{icon}</div>
-                <div className="small fw-semibold">{t(key)}</div>
-              </div>
+      <div className="app-grid home-grid mb-4">
+        {TILES.map(([to0, icon, key]) => {
+          const to = key === 'nav.mushaf' ? `/mushaf/${settings.lastPage || 1}` : to0;
+          return (
+            <Link key={key} to={to} className={'app-grid-item' + (key === 'nav.more' ? ' d-lg-none' : '')}>
+              <span className="app-grid-icon">{icon}</span>
+              <span className="app-grid-label">{t(key)}</span>
             </Link>
-          </div>
-        ); })}
+          );
+        })}
       </div>
 
       <DailyAyah />
@@ -105,33 +88,25 @@ export default function Home() {
       {loading && <Loader />}
       {error && <ErrorBox error={error} onRetry={() => setReload((r) => r + 1)} />}
 
-      <div className="row g-3">
+      <div className="surah-list">
         {list.map((s) => {
           const done = Object.keys(progress[s.number] || {}).length;
           const pct = Math.round((done / s.numberOfAyahs) * 100);
           return (
-            <div className="col-sm-6 col-lg-4" key={s.number}>
-              <div className="card h-100 surah-card shadow-sm">
-                <div className="card-body">
-                  <div className="d-flex align-items-center gap-3 mb-2">
-                    <span className="surah-num">{num(s.number)}</span>
-                    <div className="flex-grow-1">
-                      <div className="quran-font fs-4 lh-sm" dir="rtl">{s.name}</div>
-                      <div className="small text-muted">
-                        {lang !== 'ar' && <>{s.englishName} ({s.englishNameTranslation}) · </>}
-                        {s.revelationType === 'Meccan' ? t('meccanOne') : t('medinanOne')} · {t('ayahsCount', { n: num(s.numberOfAyahs) })}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="progress mb-3" style={{ height: 6 }} title={`${pct}%`}>
-                    <div className="progress-bar bg-success" style={{ width: `${pct}%` }} />
-                  </div>
-                  <div className="d-flex gap-2">
-                    <Link to={`/surah/${s.number}`} className="btn btn-sm btn-outline-success flex-fill">{t('readTafsir')}</Link>
-                    <Link to={`/memorize/${s.number}`} className="btn btn-sm btn-success flex-fill">{t('memorize')}</Link>
-                  </div>
-                </div>
-              </div>
+            <div className="surah-row" key={s.number}>
+              <Link to={`/surah/${s.number}`} className="surah-row-main">
+                <span className="surah-star"><span>{num(s.number)}</span></span>
+                <span className="flex-grow-1 min-w-0">
+                  <span className="d-block fw-bold">{lang === 'ar' ? s.name.replace(/^سُورَةُ\s*/, '') : s.englishName}</span>
+                  <span className="d-block small text-muted text-truncate">
+                    {lang !== 'ar' && <>{s.englishNameTranslation} · </>}
+                    {s.revelationType === 'Meccan' ? t('meccanOne') : t('medinanOne')} · {t('ayahsCount', { n: num(s.numberOfAyahs) })}
+                  </span>
+                  {pct > 0 && <span className="surah-progress"><span style={{ width: `${pct}%` }} /></span>}
+                </span>
+                {lang !== 'ar' && <span className="quran-font fs-4 text-success" dir="rtl">{s.name.replace(/^سُورَةُ\s*/, '')}</span>}
+              </Link>
+              <Link to={`/memorize/${s.number}`} className="surah-row-btn" title={t('memorize')}>🧠</Link>
             </div>
           );
         })}
