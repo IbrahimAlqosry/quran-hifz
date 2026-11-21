@@ -1,6 +1,21 @@
 // نصوص الواجهة لكل اللغات — المفاتيح الناقصة في أي لغة ترجع للإنجليزية تلقائيًا
 
 const ar = {
+  'grp.quran': 'القرآن', 'grp.worship': 'العبادة والذكر', 'grp.knowledge': 'العلم', 'grp.fiqh': 'الفقه والمعاملات',
+  'nav.mushaf': 'المصحف بالصفحات', 'nav.khatma': 'خطة الختمة', 'nav.hadith': 'الأحاديث النبوية والقدسية', 'nav.names': 'أسماء الله الحسنى', 'nav.prophets': 'قصص الأنبياء',
+  installApp: 'تثبيت التطبيق',
+  hadithIntro: 'نصوص كتب السنة كما هي مع الحكم على الحديث حيث يتوفر، وترجمتها بلغتك إن وُجدت.', recommended: 'ابدأ بها',
+  prevBook: 'الكتاب السابق', nextBook: 'الكتاب التالي', go: 'اذهب', bookEnd: 'لا يوجد كتاب بهذا الرقم.', backToStart: 'العودة للبداية',
+  bookN: 'الكتاب {n}', searchInBook: 'ابحث في هذا الكتاب…', hadithCount: '{n} حديث', showMore: 'عرض المزيد',
+  hadithSource: 'المصدر: Hadith API (fawazahmed0)',
+  namesIntro: 'قال ﷺ: «إن لله تسعة وتسعين اسمًا، مائة إلا واحدًا، من أحصاها دخل الجنة» (متفق عليه). وهذا السرد هو المشهور من رواية الترمذي، وقد نبّه كثير من العلماء إلى أن تعيين الأسماء فيه من اجتهاد بعض الرواة. اضغط على الاسم لمعرفة معناه.',
+  searchName: 'ابحث عن اسم…', prophetsIntro: 'الأنبياء الخمسة والعشرون المذكورون بأسمائهم في القرآن الكريم، مع آيات من قصصهم.', fromQuran: 'من القرآن الكريم:',
+  prevPage: 'السابقة', nextPage: 'التالية', swipeHint: 'اسحب يمينًا للصفحة التالية ويسارًا للسابقة — أو استخدم الأسهم.',
+  khatmaIntro: 'اختر المدة التي تريد ختم القرآن فيها، وسنقسم لك المصحف (٦٠٤ صفحة) وِردًا يوميًا مع متابعة إنجازك.',
+  khatmaCompleted: 'ختمت القرآن {n} مرة — بارك الله فيك', khatmaDays: 'أريد الختم في:', daysN: '{n} يومًا', customDays: 'أو اكتب عدد الأيام',
+  pagesPerDay: 'حوالي {n} صفحة يوميًا', startKhatma: 'ابدأ الختمة', khatmaProgress: 'أنجزت {d} من {n} يومًا', khatmaDone: 'ختمت القرآن الكريم! تقبّل الله منك',
+  newKhatma: 'ابدأ ختمة جديدة', todayWird: 'وِرد اليوم', dayN: 'اليوم {n}', pagesRange: 'من صفحة {a} إلى صفحة {b}', readNow: 'اقرأ الآن',
+  done: 'تم', markDone: 'تم الإنجاز', behind: 'فاتك {n} يوم — اقرأها لتلحق بالخطة', cancelKhatma: 'إلغاء الخطة',
   'nav.zakat': 'حاسبة الزكاة', 'nav.sadaqah': 'الأضحية والصدقات',
   reciterPerAyah: 'تلاوة لكل آية', reciterSurahOnly: 'تلاوة السورة كاملة فقط',
   surahOnlyNote: 'هذا القارئ متاح لتشغيل السورة كاملة فقط — الاستماع لكل آية والحفظ بصوت الحصري.',
@@ -89,6 +104,21 @@ const ar = {
 };
 
 const en = {
+  'grp.quran': 'Quran', 'grp.worship': 'Worship & Dhikr', 'grp.knowledge': 'Knowledge', 'grp.fiqh': 'Fiqh & Giving',
+  'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Khatm Planner', 'nav.hadith': 'Hadith & Hadith Qudsi', 'nav.names': 'Names of Allah', 'nav.prophets': 'Stories of the Prophets',
+  installApp: 'Install app',
+  hadithIntro: 'The original texts of the Sunnah collections, with gradings where available and translation in your language if one exists.', recommended: 'Start here',
+  prevBook: 'Previous book', nextBook: 'Next book', go: 'Go', bookEnd: 'There is no book with this number.', backToStart: 'Back to start',
+  bookN: 'Book {n}', searchInBook: 'Search in this book…', hadithCount: '{n} hadiths', showMore: 'Show more',
+  hadithSource: 'Source: Hadith API (fawazahmed0)',
+  namesIntro: 'The Prophet ﷺ said: “Allah has ninety-nine names, one hundred less one; whoever enumerates them will enter Paradise” (Al-Bukhari & Muslim). This list is the well-known one from At-Tirmidhi; many scholars noted that the specific list was compiled by narrators. Tap a name to see its meaning.',
+  searchName: 'Search a name…', prophetsIntro: 'The twenty-five prophets mentioned by name in the Quran, with verses from their stories.', fromQuran: 'From the Quran:',
+  prevPage: 'Previous', nextPage: 'Next', swipeHint: 'Swipe right for the next page and left for the previous — or use the arrow keys.',
+  khatmaIntro: 'Choose how long you want to take to complete the Quran, and we will split the Mushaf (604 pages) into a daily portion and track your progress.',
+  khatmaCompleted: 'You have completed the Quran {n} time(s) — barak Allahu feek', khatmaDays: 'I want to finish in:', daysN: '{n} days', customDays: 'Or type a number of days',
+  pagesPerDay: 'About {n} pages a day', startKhatma: 'Start', khatmaProgress: 'Completed {d} of {n} days', khatmaDone: 'You have completed the Quran! May Allah accept it',
+  newKhatma: 'Start a new khatm', todayWird: 'Today’s portion', dayN: 'Day {n}', pagesRange: 'Pages {a} to {b}', readNow: 'Read now',
+  done: 'Done', markDone: 'Mark as done', behind: 'You missed {n} day(s) — read them to catch up', cancelKhatma: 'Cancel plan',
   'nav.zakat': 'Zakat Calculator', 'nav.sadaqah': 'Udhiyah & Charity',
   reciterPerAyah: 'Verse-by-verse', reciterSurahOnly: 'Full surah only',
   surahOnlyNote: 'This reciter is available for full-surah playback only — verse audio and memorization use Al-Husary.',
@@ -173,6 +203,19 @@ const en = {
 };
 
 const fr = {
+  'grp.quran': 'Coran', 'grp.worship': 'Adoration', 'grp.knowledge': 'Science', 'grp.fiqh': 'Fiqh & dons',
+  'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Plan de lecture', 'nav.hadith': 'Hadiths & hadiths qudsi', 'nav.names': 'Noms d’Allah', 'nav.prophets': 'Histoires des prophètes',
+  installApp: 'Installer', hadithIntro: 'Textes originaux des recueils de la Sunna, avec les authentifications disponibles et la traduction si elle existe.', recommended: 'Commencer ici',
+  prevBook: 'Livre précédent', nextBook: 'Livre suivant', go: 'Aller', bookEnd: 'Aucun livre avec ce numéro.', backToStart: 'Retour au début',
+  bookN: 'Livre {n}', searchInBook: 'Rechercher dans ce livre…', hadithCount: '{n} hadiths', showMore: 'Afficher plus', hadithSource: 'Source : Hadith API (fawazahmed0)',
+  namesIntro: 'Le Prophète ﷺ a dit : « Allah a quatre-vingt-dix-neuf noms ; quiconque les dénombre entrera au Paradis » (Al-Boukhari et Mouslim). Cette liste est celle, connue, d’At-Tirmidhi. Touchez un nom pour voir son sens.',
+  searchName: 'Rechercher un nom…', prophetsIntro: 'Les vingt-cinq prophètes cités nommément dans le Coran, avec des versets de leurs histoires.', fromQuran: 'Du Coran :',
+  prevPage: 'Précédente', nextPage: 'Suivante', swipeHint: 'Balayez vers la droite pour la page suivante, vers la gauche pour la précédente.',
+  khatmaIntro: 'Choisissez la durée pour terminer le Coran ; le Mushaf (604 pages) sera réparti en portions quotidiennes.',
+  khatmaCompleted: 'Coran terminé {n} fois — qu’Allah vous bénisse', khatmaDays: 'Terminer en :', daysN: '{n} jours', customDays: 'Ou saisissez un nombre de jours',
+  pagesPerDay: 'Environ {n} pages par jour', startKhatma: 'Commencer', khatmaProgress: '{d} jours sur {n}', khatmaDone: 'Coran terminé ! Qu’Allah l’accepte',
+  newKhatma: 'Nouvelle lecture complète', todayWird: 'Portion du jour', dayN: 'Jour {n}', pagesRange: 'Pages {a} à {b}', readNow: 'Lire',
+  done: 'Fait', markDone: 'Marquer comme fait', behind: '{n} jour(s) en retard', cancelKhatma: 'Annuler le plan',
   'nav.zakat': 'Calcul de la Zakat', 'nav.sadaqah': 'Sacrifice & aumônes',
   reciterPerAyah: 'Verset par verset', reciterSurahOnly: 'Sourate entière uniquement',
   surahOnlyNote: 'Ce récitateur n’est disponible que pour la sourate entière — l’écoute par verset et la mémorisation utilisent Al-Husary.',
@@ -257,6 +300,19 @@ const fr = {
 };
 
 const ur = {
+  'grp.quran': 'قرآن', 'grp.worship': 'عبادت و ذکر', 'grp.knowledge': 'علم', 'grp.fiqh': 'فقہ',
+  'nav.mushaf': 'مصحف (صفحات)', 'nav.khatma': 'ختم کا منصوبہ', 'nav.hadith': 'احادیث نبویہ و قدسیہ', 'nav.names': 'اسمائے حسنیٰ', 'nav.prophets': 'قصص الانبیاء',
+  installApp: 'ایپ انسٹال کریں', hadithIntro: 'کتبِ حدیث کے اصل متون، دستیاب درجۂ صحت اور آپ کی زبان میں ترجمے کے ساتھ۔', recommended: 'یہاں سے شروع کریں',
+  prevBook: 'پچھلی کتاب', nextBook: 'اگلی کتاب', go: 'جائیں', bookEnd: 'اس نمبر کی کوئی کتاب نہیں۔', backToStart: 'شروع پر واپس',
+  bookN: 'کتاب {n}', searchInBook: 'اس کتاب میں تلاش…', hadithCount: '{n} احادیث', showMore: 'مزید دکھائیں', hadithSource: 'ماخذ: Hadith API (fawazahmed0)',
+  namesIntro: 'نبی ﷺ نے فرمایا: «اللہ کے ننانوے نام ہیں، جس نے انہیں شمار کیا جنت میں داخل ہوگا» (بخاری و مسلم)۔ یہ فہرست ترمذی کی مشہور روایت سے ہے۔ معنی دیکھنے کے لیے نام پر ٹیپ کریں۔',
+  searchName: 'نام تلاش کریں…', prophetsIntro: 'قرآن میں نام سے مذکور پچیس انبیاء، ان کے قصوں کی آیات کے ساتھ۔', fromQuran: 'قرآن سے:',
+  prevPage: 'پچھلا', nextPage: 'اگلا', swipeHint: 'اگلے صفحے کے لیے دائیں، پچھلے کے لیے بائیں سوائپ کریں۔',
+  khatmaIntro: 'قرآن ختم کرنے کی مدت منتخب کریں، ہم مصحف (604 صفحات) کو روزانہ کے حصوں میں تقسیم کر دیں گے۔',
+  khatmaCompleted: 'آپ نے {n} بار قرآن ختم کیا — بارک اللہ فیک', khatmaDays: 'ختم کی مدت:', daysN: '{n} دن', customDays: 'یا دنوں کی تعداد لکھیں',
+  pagesPerDay: 'روزانہ تقریباً {n} صفحات', startKhatma: 'شروع کریں', khatmaProgress: '{n} میں سے {d} دن مکمل', khatmaDone: 'آپ نے قرآن ختم کر لیا! اللہ قبول فرمائے',
+  newKhatma: 'نیا ختم', todayWird: 'آج کا حصہ', dayN: 'دن {n}', pagesRange: 'صفحہ {a} سے {b} تک', readNow: 'ابھی پڑھیں',
+  done: 'مکمل', markDone: 'مکمل نشان لگائیں', behind: '{n} دن رہ گئے — پورا کریں', cancelKhatma: 'منصوبہ منسوخ کریں',
   'nav.zakat': 'زکوٰۃ کیلکولیٹر', 'nav.sadaqah': 'قربانی اور صدقات',
   reciterPerAyah: 'آیت بہ آیت', reciterSurahOnly: 'صرف مکمل سورت',
   surahOnlyNote: 'یہ قاری صرف مکمل سورت کے لیے دستیاب ہیں — آیت بہ آیت اور حفظ الحصری کی آواز میں۔',
@@ -340,6 +396,19 @@ const ur = {
 };
 
 const id = {
+  'grp.quran': 'Al-Quran', 'grp.worship': 'Ibadah & Dzikir', 'grp.knowledge': 'Ilmu', 'grp.fiqh': 'Fikih',
+  'nav.mushaf': 'Mushaf (halaman)', 'nav.khatma': 'Rencana Khatam', 'nav.hadith': 'Hadis & Hadis Qudsi', 'nav.names': 'Asmaul Husna', 'nav.prophets': 'Kisah Para Nabi',
+  installApp: 'Pasang aplikasi', hadithIntro: 'Teks asli kitab-kitab hadis, dengan derajat hadis bila tersedia dan terjemahan dalam bahasa Anda.', recommended: 'Mulai di sini',
+  prevBook: 'Kitab sebelumnya', nextBook: 'Kitab berikutnya', go: 'Buka', bookEnd: 'Tidak ada kitab dengan nomor ini.', backToStart: 'Kembali ke awal',
+  bookN: 'Kitab {n}', searchInBook: 'Cari di kitab ini…', hadithCount: '{n} hadis', showMore: 'Tampilkan lagi', hadithSource: 'Sumber: Hadith API (fawazahmed0)',
+  namesIntro: 'Nabi ﷺ bersabda: “Allah memiliki sembilan puluh sembilan nama; siapa yang menghitungnya masuk surga” (Bukhari & Muslim). Daftar ini adalah riwayat masyhur At-Tirmidzi. Ketuk nama untuk melihat maknanya.',
+  searchName: 'Cari nama…', prophetsIntro: 'Dua puluh lima nabi yang disebut namanya dalam Al-Quran, beserta ayat kisah mereka.', fromQuran: 'Dari Al-Quran:',
+  prevPage: 'Sebelumnya', nextPage: 'Berikutnya', swipeHint: 'Geser ke kanan untuk halaman berikutnya, ke kiri untuk sebelumnya.',
+  khatmaIntro: 'Pilih berapa lama Anda ingin mengkhatamkan Al-Quran; Mushaf (604 halaman) akan dibagi menjadi wirid harian.',
+  khatmaCompleted: 'Anda telah khatam {n} kali — barakallahu fiik', khatmaDays: 'Khatam dalam:', daysN: '{n} hari', customDays: 'Atau ketik jumlah hari',
+  pagesPerDay: 'Sekitar {n} halaman per hari', startKhatma: 'Mulai', khatmaProgress: '{d} dari {n} hari selesai', khatmaDone: 'Anda telah khatam! Semoga Allah menerimanya',
+  newKhatma: 'Mulai khatam baru', todayWird: 'Wirid hari ini', dayN: 'Hari {n}', pagesRange: 'Halaman {a} sampai {b}', readNow: 'Baca sekarang',
+  done: 'Selesai', markDone: 'Tandai selesai', behind: 'Tertinggal {n} hari — kejar ketertinggalan', cancelKhatma: 'Batalkan rencana',
   'nav.zakat': 'Kalkulator Zakat', 'nav.sadaqah': 'Kurban & Sedekah',
   reciterPerAyah: 'Per ayat', reciterSurahOnly: 'Satu surah penuh saja',
   surahOnlyNote: 'Qari ini hanya tersedia untuk satu surah penuh — audio per ayat dan hafalan memakai Al-Husary.',
@@ -423,6 +492,19 @@ const id = {
 };
 
 const tr = {
+  'grp.quran': 'Kur’an', 'grp.worship': 'İbadet & Zikir', 'grp.knowledge': 'İlim', 'grp.fiqh': 'Fıkıh',
+  'nav.mushaf': 'Mushaf (sayfa)', 'nav.khatma': 'Hatim Planı', 'nav.hadith': 'Hadisler & Kudsî Hadisler', 'nav.names': 'Esmâü’l-Hüsnâ', 'nav.prophets': 'Peygamber Kıssaları',
+  installApp: 'Uygulamayı yükle', hadithIntro: 'Hadis kitaplarının orijinal metinleri; mevcutsa sıhhat dereceleri ve dilinizde tercümesiyle.', recommended: 'Buradan başlayın',
+  prevBook: 'Önceki kitap', nextBook: 'Sonraki kitap', go: 'Git', bookEnd: 'Bu numarada kitap yok.', backToStart: 'Başa dön',
+  bookN: 'Kitap {n}', searchInBook: 'Bu kitapta ara…', hadithCount: '{n} hadis', showMore: 'Daha fazla', hadithSource: 'Kaynak: Hadith API (fawazahmed0)',
+  namesIntro: 'Peygamber ﷺ buyurdu: “Allah’ın doksan dokuz ismi vardır; onları sayan cennete girer” (Buhârî ve Müslim). Bu liste Tirmizî’nin meşhur rivayetidir. Anlamı için isme dokunun.',
+  searchName: 'İsim ara…', prophetsIntro: 'Kur’an’da ismi geçen yirmi beş peygamber ve kıssalarından ayetler.', fromQuran: 'Kur’an’dan:',
+  prevPage: 'Önceki', nextPage: 'Sonraki', swipeHint: 'Sonraki sayfa için sağa, önceki için sola kaydırın.',
+  khatmaIntro: 'Kur’an’ı ne kadar sürede hatmetmek istediğinizi seçin; Mushaf (604 sayfa) günlük virdlere bölünür.',
+  khatmaCompleted: '{n} kez hatim yaptınız — Allah razı olsun', khatmaDays: 'Hatim süresi:', daysN: '{n} gün', customDays: 'Veya gün sayısı yazın',
+  pagesPerDay: 'Günde yaklaşık {n} sayfa', startKhatma: 'Başla', khatmaProgress: '{n} günden {d} tamamlandı', khatmaDone: 'Hatmi tamamladınız! Allah kabul etsin',
+  newKhatma: 'Yeni hatim', todayWird: 'Bugünkü vird', dayN: '{n}. gün', pagesRange: '{a}. sayfadan {b}. sayfaya', readNow: 'Şimdi oku',
+  done: 'Tamam', markDone: 'Tamamlandı işaretle', behind: '{n} gün geride kaldınız', cancelKhatma: 'Planı iptal et',
   'nav.zakat': 'Zekât Hesaplama', 'nav.sadaqah': 'Kurban & Sadaka',
   reciterPerAyah: 'Ayet ayet', reciterSurahOnly: 'Yalnızca sure',
   surahOnlyNote: 'Bu kâri yalnızca tüm sure için mevcut — ayet ayet dinleme ve ezber Husarî sesiyle.',

@@ -15,6 +15,11 @@ import Tasbeeh from './pages/Tasbeeh';
 import Search from './pages/Search';
 import Zakat from './pages/Zakat';
 import Sadaqah from './pages/Sadaqah';
+import Hadith from './pages/Hadith';
+import Names from './pages/Names';
+import Prophets from './pages/Prophets';
+import Mushaf from './pages/Mushaf';
+import Khatma from './pages/Khatma';
 import AdhanBanner from './components/AdhanBanner';
 import { useApp } from './context/AppContext';
 import { DEFAULT_TRANSLATION, LANGS, useT } from './i18n';
@@ -54,16 +59,28 @@ export default function App() {
     updateSettings({ lang: code, translation: DEFAULT_TRANSLATION[code], showTranslation: code !== 'ar' });
 
   const link = ({ isActive }) => 'nav-link' + (isActive ? ' active fw-bold' : '');
-  const moreLinks = [
-    ['/duas', 'nav.duas'],
-    ['/hajj', 'nav.hajj'],
-    ['/zakat', 'nav.zakat'],
-    ['/sadaqah', 'nav.sadaqah'],
-    ['/tasbeeh', 'nav.tasbeeh'],
-    ['/search', 'nav.search'],
-    ['/test', 'nav.test'],
-    ['/progress', 'nav.progress'],
+  const moreGroups = [
+    ['grp.quran', [['/mushaf/' + (settings.lastPage || 1), 'nav.mushaf'], ['/khatma', 'nav.khatma'], ['/search', 'nav.search'], ['/test', 'nav.test'], ['/progress', 'nav.progress']]],
+    ['grp.worship', [['/duas', 'nav.duas'], ['/tasbeeh', 'nav.tasbeeh'], ['/names', 'nav.names']]],
+    ['grp.knowledge', [['/hadith', 'nav.hadith'], ['/prophets', 'nav.prophets']]],
+    ['grp.fiqh', [['/hajj', 'nav.hajj'], ['/zakat', 'nav.zakat'], ['/sadaqah', 'nav.sadaqah']]],
   ];
+
+  // تثبيت التطبيق (PWA)
+  const [canInstall, setCanInstall] = useState(Boolean(window.__installPrompt));
+  useEffect(() => {
+    const on = () => setCanInstall(true);
+    window.addEventListener('installable', on);
+    return () => window.removeEventListener('installable', on);
+  }, []);
+  const install = async () => {
+    const p = window.__installPrompt;
+    if (!p) return;
+    p.prompt();
+    await p.userChoice.catch(() => {});
+    window.__installPrompt = null;
+    setCanInstall(false);
+  };
 
   return (
     <>
@@ -85,18 +102,23 @@ export default function App() {
                   {stats.due.length > 0 && <span className="badge bg-warning text-dark ms-1">{num(stats.due.length)}</span>}
                 </button>
                 <ul className={'dropdown-menu' + (more ? ' show' : '')}>
-                  {moreLinks.map(([to, key]) => (
-                    <li key={to}>
-                      <NavLink to={to} className="dropdown-item">
-                        {t(key)}
-                        {to === '/test' && stats.due.length > 0 && <span className="badge bg-warning text-dark ms-1">{num(stats.due.length)}</span>}
-                      </NavLink>
+                  {moreGroups.map(([g, links], gi) => (
+                    <li key={g}>
+                      {gi > 0 && <hr className="dropdown-divider" />}
+                      <h6 className="dropdown-header">{t(g)}</h6>
+                      {links.map(([to, key]) => (
+                        <NavLink key={key} to={to} className="dropdown-item">
+                          {t(key)}
+                          {to === '/test' && stats.due.length > 0 && <span className="badge bg-warning text-dark ms-1">{num(stats.due.length)}</span>}
+                        </NavLink>
+                      ))}
                     </li>
                   ))}
                 </ul>
               </li>
             </ul>
             <div className="d-flex gap-2 align-items-center py-2 py-lg-0">
+              {canInstall && <button className="btn btn-sm btn-warning" onClick={install}>⬇ {t('installApp')}</button>}
               <select className="form-select form-select-sm lang-select" value={lang} onChange={(e) => changeLang(e.target.value)} aria-label="language">
                 {LANGS.map((l) => <option key={l.code} value={l.code}>{l.name}</option>)}
               </select>
@@ -127,6 +149,12 @@ export default function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/zakat" element={<Zakat />} />
           <Route path="/sadaqah" element={<Sadaqah />} />
+          <Route path="/hadith" element={<Hadith />} />
+          <Route path="/hadith/:book/:section" element={<Hadith />} />
+          <Route path="/names" element={<Names />} />
+          <Route path="/prophets" element={<Prophets />} />
+          <Route path="/mushaf/:p" element={<Mushaf />} />
+          <Route path="/khatma" element={<Khatma />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>

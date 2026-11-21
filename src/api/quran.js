@@ -155,3 +155,19 @@ export async function searchQuran(query, edition = 'quran-simple-clean') {
     throw e;
   }
 }
+
+/** صفحة من المصحف (ترقيم مصحف المدينة ١–٦٠٤) */
+export async function getPage(page) {
+  const data = await get(`/page/${page}/quran-uthmani`);
+  return data.ayahs.map((a) => ({
+    n: a.numberInSurah,
+    surah: a.surah.number,
+    surahName: a.surah.name,
+    surahEn: a.surah.englishName,
+    juz: a.juz,
+    hizbQuarter: a.hizbQuarter,
+    text: stripBasmala(a.surah.number, a.numberInSurah, a.text),
+  }));
+}
+
+export const TOTAL_PAGES = 604;

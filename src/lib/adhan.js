@@ -40,10 +40,13 @@ export async function requestNotify() {
   }
 }
 
-export function notify(title, body) {
+export async function notify(title, body) {
   try {
-    if ('Notification' in window && Notification.permission === 'granted') new Notification(title, { body, tag: 'adhan' });
+    if (!('Notification' in window) || Notification.permission !== 'granted') return;
+    const reg = await navigator.serviceWorker?.getRegistration?.();
+    if (reg) await reg.showNotification(title, { body, tag: 'adhan', icon: './icon-192.png', vibrate: [200, 100, 200] });
+    else new Notification(title, { body, tag: 'adhan' });
   } catch {
-    /* بعض الموبايلات لا تدعم الإشعار من الصفحة مباشرة */
+    /* غير مدعوم */
   }
 }

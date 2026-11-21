@@ -10,6 +10,11 @@ import { normalizeArabic } from '../utils/arabic';
 
 const TILES = [
   ['/prayer', '🕌', 'nav.prayer'],
+  ['/mushaf/1', '📗', 'nav.mushaf'],
+  ['/khatma', '📅', 'nav.khatma'],
+  ['/hadith', '📜', 'nav.hadith'],
+  ['/names', '✨', 'nav.names'],
+  ['/prophets', '📖', 'nav.prophets'],
   ['/adhkar', '📿', 'nav.adhkar'],
   ['/duas', '🤲', 'nav.duas'],
   ['/hajj', '🕋', 'nav.hajj'],
@@ -65,7 +70,7 @@ export default function Home() {
       </div>
 
       <div className="row g-2 mb-4">
-        {TILES.map(([to, icon, key]) => (
+        {TILES.map(([to0, icon, key]) => { const to = key === 'nav.mushaf' ? `/mushaf/${settings.lastPage || 1}` : to0; return (
           <div className="col-3 col-md-2 col-xl-1-5" key={to}>
             <Link to={to} className="card tile text-center text-decoration-none h-100 shadow-sm">
               <div className="card-body p-2">
@@ -74,7 +79,7 @@ export default function Home() {
               </div>
             </Link>
           </div>
-        ))}
+        ); })}
       </div>
 
       <DailyAyah />
