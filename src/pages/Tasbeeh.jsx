@@ -44,7 +44,7 @@ export default function Tasbeeh() {
 
   return (
     <div className="mx-auto text-center" style={{ maxWidth: 480 }}>
-      <h2 className="h4 mb-3">🔢 {t('nav.tasbeeh')}</h2>
+      <h2 className="h4 mb-3 page-title">🔢 {t('nav.tasbeeh')}</h2>
 
       <select className="form-select mb-2" dir="rtl" value={state.phrase} onChange={(e) => setState((s) => ({ ...s, phrase: Number(e.target.value), count: 0, laps: 0 }))}>
         {PHRASES.map((x, i) => <option key={i} value={i}>{x.ar}</option>)}

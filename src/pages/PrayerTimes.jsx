@@ -99,7 +99,7 @@ export default function PrayerTimes() {
 
   return (
     <>
-      <h2 className="h4 mb-3">🕌 {t('nav.prayer')}</h2>
+      <h2 className="h4 mb-3 page-title">🕌 {t('nav.prayer')}</h2>
 
       {loading && !data && <Loader />}
       {error && <ErrorBox error={error} onRetry={() => setReload((r) => r + 1)} />}

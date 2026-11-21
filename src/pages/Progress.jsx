@@ -62,7 +62,7 @@ export default function Progress() {
 
   return (
     <>
-      <h2 className="h4 mb-3">{t('nav.progress')}</h2>
+      <h2 className="h4 mb-3 page-title">{t('nav.progress')}</h2>
 
       <div className="row g-3 mb-4">
         {[

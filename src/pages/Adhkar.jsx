@@ -33,7 +33,7 @@ export default function Adhkar() {
 
   return (
     <>
-      <h2 className="h4 mb-3">📿 {t('nav.adhkar')}</h2>
+      <h2 className="h4 mb-3 page-title">📿 {t('nav.adhkar')}</h2>
 
       <ul className="nav nav-pills mb-3 flex-nowrap overflow-auto">
         {ADHKAR_CATS.map((c) => (

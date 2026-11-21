@@ -1,6 +1,7 @@
 // نصوص الواجهة لكل اللغات — المفاتيح الناقصة في أي لغة ترجع للإنجليزية تلقائيًا
 
 const ar = {
+  'tab.home': 'الرئيسية', 'tab.mushaf': 'المصحف', 'tab.prayer': 'الصلاة', 'tab.adhkar': 'الأذكار', settings: 'الإعدادات', language: 'اللغة', privacy: 'سياسة الخصوصية',
   'grp.quran': 'القرآن', 'grp.worship': 'العبادة والذكر', 'grp.knowledge': 'العلم', 'grp.fiqh': 'الفقه والمعاملات',
   'nav.mushaf': 'المصحف بالصفحات', 'nav.khatma': 'خطة الختمة', 'nav.hadith': 'الأحاديث النبوية والقدسية', 'nav.names': 'أسماء الله الحسنى', 'nav.prophets': 'قصص الأنبياء',
   installApp: 'تثبيت التطبيق',
@@ -104,6 +105,7 @@ const ar = {
 };
 
 const en = {
+  'tab.home': 'Home', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Prayer', 'tab.adhkar': 'Adhkar', settings: 'Settings', language: 'Language', privacy: 'Privacy policy',
   'grp.quran': 'Quran', 'grp.worship': 'Worship & Dhikr', 'grp.knowledge': 'Knowledge', 'grp.fiqh': 'Fiqh & Giving',
   'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Khatm Planner', 'nav.hadith': 'Hadith & Hadith Qudsi', 'nav.names': 'Names of Allah', 'nav.prophets': 'Stories of the Prophets',
   installApp: 'Install app',
@@ -203,6 +205,7 @@ const en = {
 };
 
 const fr = {
+  'tab.home': 'Accueil', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Prière', 'tab.adhkar': 'Adhkar', settings: 'Paramètres', language: 'Langue', privacy: 'Confidentialité',
   'grp.quran': 'Coran', 'grp.worship': 'Adoration', 'grp.knowledge': 'Science', 'grp.fiqh': 'Fiqh & dons',
   'nav.mushaf': 'Mushaf (pages)', 'nav.khatma': 'Plan de lecture', 'nav.hadith': 'Hadiths & hadiths qudsi', 'nav.names': 'Noms d’Allah', 'nav.prophets': 'Histoires des prophètes',
   installApp: 'Installer', hadithIntro: 'Textes originaux des recueils de la Sunna, avec les authentifications disponibles et la traduction si elle existe.', recommended: 'Commencer ici',
@@ -300,6 +303,7 @@ const fr = {
 };
 
 const ur = {
+  'tab.home': 'ہوم', 'tab.mushaf': 'مصحف', 'tab.prayer': 'نماز', 'tab.adhkar': 'اذکار', settings: 'ترتیبات', language: 'زبان', privacy: 'رازداری کی پالیسی',
   'grp.quran': 'قرآن', 'grp.worship': 'عبادت و ذکر', 'grp.knowledge': 'علم', 'grp.fiqh': 'فقہ',
   'nav.mushaf': 'مصحف (صفحات)', 'nav.khatma': 'ختم کا منصوبہ', 'nav.hadith': 'احادیث نبویہ و قدسیہ', 'nav.names': 'اسمائے حسنیٰ', 'nav.prophets': 'قصص الانبیاء',
   installApp: 'ایپ انسٹال کریں', hadithIntro: 'کتبِ حدیث کے اصل متون، دستیاب درجۂ صحت اور آپ کی زبان میں ترجمے کے ساتھ۔', recommended: 'یہاں سے شروع کریں',
@@ -396,6 +400,7 @@ const ur = {
 };
 
 const id = {
+  'tab.home': 'Beranda', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Salat', 'tab.adhkar': 'Dzikir', settings: 'Pengaturan', language: 'Bahasa', privacy: 'Kebijakan privasi',
   'grp.quran': 'Al-Quran', 'grp.worship': 'Ibadah & Dzikir', 'grp.knowledge': 'Ilmu', 'grp.fiqh': 'Fikih',
   'nav.mushaf': 'Mushaf (halaman)', 'nav.khatma': 'Rencana Khatam', 'nav.hadith': 'Hadis & Hadis Qudsi', 'nav.names': 'Asmaul Husna', 'nav.prophets': 'Kisah Para Nabi',
   installApp: 'Pasang aplikasi', hadithIntro: 'Teks asli kitab-kitab hadis, dengan derajat hadis bila tersedia dan terjemahan dalam bahasa Anda.', recommended: 'Mulai di sini',
@@ -492,6 +497,7 @@ const id = {
 };
 
 const tr = {
+  'tab.home': 'Ana sayfa', 'tab.mushaf': 'Mushaf', 'tab.prayer': 'Namaz', 'tab.adhkar': 'Zikir', settings: 'Ayarlar', language: 'Dil', privacy: 'Gizlilik politikası',
   'grp.quran': 'Kur’an', 'grp.worship': 'İbadet & Zikir', 'grp.knowledge': 'İlim', 'grp.fiqh': 'Fıkıh',
   'nav.mushaf': 'Mushaf (sayfa)', 'nav.khatma': 'Hatim Planı', 'nav.hadith': 'Hadisler & Kudsî Hadisler', 'nav.names': 'Esmâü’l-Hüsnâ', 'nav.prophets': 'Peygamber Kıssaları',
   installApp: 'Uygulamayı yükle', hadithIntro: 'Hadis kitaplarının orijinal metinleri; mevcutsa sıhhat dereceleri ve dilinizde tercümesiyle.', recommended: 'Buradan başlayın',

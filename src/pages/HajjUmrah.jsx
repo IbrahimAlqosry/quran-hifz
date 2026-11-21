@@ -55,7 +55,7 @@ export default function HajjUmrah() {
 
   return (
     <>
-      <h2 className="h4 mb-2">🕋 {t('nav.hajj')}</h2>
+      <h2 className="h4 mb-2 page-title">🕋 {t('nav.hajj')}</h2>
       <div className="alert alert-light border small">{t('hajjDisclaimer')}</div>
 
       <ul className="nav nav-pills mb-3 flex-nowrap overflow-auto">

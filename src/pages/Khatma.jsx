@@ -23,7 +23,7 @@ export default function Khatma() {
   if (!plan) {
     return (
       <div className="mx-auto" style={{ maxWidth: 560 }}>
-        <h2 className="h4 mb-2">📅 {t('nav.khatma')}</h2>
+        <h2 className="h4 mb-2 page-title">📅 {t('nav.khatma')}</h2>
         <p className="text-muted">{t('khatmaIntro')}</p>
         {completed > 0 && <div className="alert alert-success">{t('khatmaCompleted', { n: num(completed) })}</div>}
         <div className="card card-body shadow-sm">
@@ -57,7 +57,7 @@ export default function Khatma() {
 
   return (
     <div className="mx-auto" style={{ maxWidth: 760 }}>
-      <h2 className="h4 mb-3">📅 {t('nav.khatma')}</h2>
+      <h2 className="h4 mb-3 page-title">📅 {t('nav.khatma')}</h2>
       <div className="card card-body shadow-sm mb-3">
         <div className="d-flex justify-content-between small mb-1">
           <span>{t('khatmaProgress', { d: num(plan.done.length), n: num(plan.days) })}</span>

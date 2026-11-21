@@ -9,7 +9,7 @@ export default function Prophets() {
 
   return (
     <>
-      <h2 className="h4 mb-2">📖 {t('nav.prophets')}</h2>
+      <h2 className="h4 mb-2 page-title">📖 {t('nav.prophets')}</h2>
       <p className="small text-muted">{t('prophetsIntro')}</p>
       <div className="vstack gap-2">
         {PROPHETS.map((p, i) => (

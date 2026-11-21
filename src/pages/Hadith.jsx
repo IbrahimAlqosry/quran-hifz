@@ -19,7 +19,7 @@ function BookList() {
   const { t, pick } = useT();
   return (
     <>
-      <h2 className="h4 mb-2">📜 {t('nav.hadith')}</h2>
+      <h2 className="h4 mb-2 page-title">📜 {t('nav.hadith')}</h2>
       <p className="text-muted small">{t('hadithIntro')}</p>
       <div className="row g-3">
         {BOOKS.map((b) => (

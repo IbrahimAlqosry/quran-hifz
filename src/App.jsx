@@ -20,6 +20,8 @@ import Names from './pages/Names';
 import Prophets from './pages/Prophets';
 import Mushaf from './pages/Mushaf';
 import Khatma from './pages/Khatma';
+import More from './pages/More';
+import { AppBar, BottomNav } from './components/MobileChrome';
 import AdhanBanner from './components/AdhanBanner';
 import { useApp } from './context/AppContext';
 import { DEFAULT_TRANSLATION, LANGS, useT } from './i18n';
@@ -84,7 +86,8 @@ export default function App() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-quran sticky-top shadow-sm">
+      <AppBar />
+      <nav className="navbar navbar-expand-lg navbar-dark bg-quran sticky-top shadow-sm d-none d-lg-flex">
         <div className="container">
           <NavLink to="/" className="navbar-brand fw-bold">📖 {t('appName')}</NavLink>
           <button className="navbar-toggler" type="button" onClick={() => setOpen((o) => !o)} aria-label="menu">
@@ -134,7 +137,7 @@ export default function App() {
         </div>
       </nav>
 
-      <main className="container py-4">
+      <main className="container py-3 py-lg-4 app-main">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/surah/:n" element={<SurahReader />} />
@@ -155,13 +158,16 @@ export default function App() {
           <Route path="/prophets" element={<Prophets />} />
           <Route path="/mushaf/:p" element={<Mushaf />} />
           <Route path="/khatma" element={<Khatma />} />
+          <Route path="/more" element={<More />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
 
       <AdhanBanner />
 
-      <footer className="text-center text-muted small py-4 border-top">
+      <BottomNav />
+
+      <footer className="text-center text-muted small py-4 border-top d-none d-lg-block">
         <div className="quran-font fs-6 mb-1" dir="rtl">﴿وَلَقَدْ يَسَّرْنَا ٱلْقُرْءَانَ لِلذِّكْرِ فَهَلْ مِن مُّدَّكِرٍ﴾</div>
         {t('footer')}
       </footer>

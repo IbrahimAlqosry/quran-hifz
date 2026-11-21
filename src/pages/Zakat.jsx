@@ -48,7 +48,7 @@ export default function Zakat() {
 
   return (
     <>
-      <h2 className="h4 mb-3">💰 {t('nav.zakat')}</h2>
+      <h2 className="h4 mb-3 page-title">💰 {t('nav.zakat')}</h2>
       <ul className="nav nav-pills mb-3 flex-nowrap overflow-auto">
         {['money', 'fitr', 'other'].map((k) => (
           <li className="nav-item" key={k}>

@@ -125,7 +125,7 @@ export default function Sadaqah() {
 
   return (
     <>
-      <h2 className="h4 mb-3">🐑 {t('nav.sadaqah')}</h2>
+      <h2 className="h4 mb-3 page-title">🐑 {t('nav.sadaqah')}</h2>
       <ul className="nav nav-pills mb-3">
         {['udhiya', 'sadaqah'].map((k) => (
           <li className="nav-item" key={k}>

@@ -22,7 +22,7 @@ export default function Duas() {
 
   return (
     <>
-      <h2 className="h4 mb-3">🤲 {t('nav.duas')}</h2>
+      <h2 className="h4 mb-3 page-title">🤲 {t('nav.duas')}</h2>
       <ul className="nav nav-pills mb-3">
         {['quran', 'sunnah'].map((k) => (
           <li className="nav-item" key={k}>

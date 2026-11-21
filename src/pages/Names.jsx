@@ -18,7 +18,7 @@ export default function Names() {
 
   return (
     <>
-      <h2 className="h4 mb-2">✨ {t('nav.names')}</h2>
+      <h2 className="h4 mb-2 page-title">✨ {t('nav.names')}</h2>
       <div className="alert alert-light border small">{t('namesIntro')}</div>
       <input className="form-control mb-3" placeholder={t('searchName')} value={q} onChange={(e) => setQ(e.target.value)} />
       <div className="row g-2">

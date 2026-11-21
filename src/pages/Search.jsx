@@ -32,7 +32,7 @@ export default function Search() {
 
   return (
     <div className="mx-auto" style={{ maxWidth: 820 }}>
-      <h2 className="h4 mb-3">🔍 {t('nav.search')}</h2>
+      <h2 className="h4 mb-3 page-title">🔍 {t('nav.search')}</h2>
       <form className="input-group mb-2" onSubmit={run}>
         <input className="form-control" value={q} onChange={(e) => setQ(e.target.value)} placeholder={t('searchPlaceholder')} />
         <button className="btn btn-success">{t('nav.search')}</button>

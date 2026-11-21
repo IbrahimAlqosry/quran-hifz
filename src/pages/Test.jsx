@@ -45,7 +45,7 @@ export default function Test() {
 
   return (
     <div className="mx-auto" style={{ maxWidth: 640 }}>
-      <h2 className="h4 mb-3">{t('nav.test')}</h2>
+      <h2 className="h4 mb-3 page-title">{t('nav.test')}</h2>
       <p className="text-muted">{t('testIntro')}</p>
 
       {memorizedList.length === 0 ? (
