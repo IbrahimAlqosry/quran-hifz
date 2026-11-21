@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut android:shortcutId="prayer" android:enabled="true" android:icon="@mipmap/ic_launcher" android:shortcutShortLabel="@string/sc_prayer">
+        <intent android:action="android.intent.action.VIEW" android:data="https://ibrahimalqosry.github.io/quran-hifz/#/prayer" />
+    </shortcut>
+    <shortcut android:shortcutId="adhkar" android:enabled="true" android:icon="@mipmap/ic_launcher" android:shortcutShortLabel="@string/sc_adhkar">
+        <intent android:action="android.intent.action.VIEW" android:data="https://ibrahimalqosry.github.io/quran-hifz/#/adhkar" />
+    </shortcut>
+    <shortcut android:shortcutId="mushaf" android:enabled="true" android:icon="@mipmap/ic_launcher" android:shortcutShortLabel="@string/sc_mushaf">
+        <intent android:action="android.intent.action.VIEW" android:data="https://ibrahimalqosry.github.io/quran-hifz/#/mushaf/1" />
+    </shortcut>
+</shortcuts>

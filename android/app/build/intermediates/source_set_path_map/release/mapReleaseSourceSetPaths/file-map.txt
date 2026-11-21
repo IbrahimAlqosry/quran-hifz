@@ -1,0 +1,10 @@
+com.alqosry.hifz.app-browser-1.4.0-0 /home/runner/.gradle/caches/8.14.3/transforms/4e80833c61e83e84e97bf1ffb9aceabb/transformed/browser-1.4.0/res
+com.alqosry.hifz.app-androidbrowserhelper-2.5.0-1 /home/runner/.gradle/caches/8.14.3/transforms/5f97edb3414321c9d79bba6d1509a649/transformed/androidbrowserhelper-2.5.0/res
+com.alqosry.hifz.app-core-1.1.0-2 /home/runner/.gradle/caches/8.14.3/transforms/8fe9e37bfa059b74df4938c90747cbc7/transformed/core-1.1.0/res
+com.alqosry.hifz.app-pngs-3 /home/runner/work/quran-hifz/quran-hifz/android/app/build/generated/res/pngs/release
+com.alqosry.hifz.app-resValues-4 /home/runner/work/quran-hifz/quran-hifz/android/app/build/generated/res/resValues/release
+com.alqosry.hifz.app-packageReleaseResources-5 /home/runner/work/quran-hifz/quran-hifz/android/app/build/intermediates/incremental/release/packageReleaseResources/merged.dir
+com.alqosry.hifz.app-packageReleaseResources-6 /home/runner/work/quran-hifz/quran-hifz/android/app/build/intermediates/incremental/release/packageReleaseResources/stripped.dir
+com.alqosry.hifz.app-release-7 /home/runner/work/quran-hifz/quran-hifz/android/app/build/intermediates/merged_res/release/mergeReleaseResources
+com.alqosry.hifz.app-main-8 /home/runner/work/quran-hifz/quran-hifz/android/app/src/main/res
+com.alqosry.hifz.app-release-9 /home/runner/work/quran-hifz/quran-hifz/android/app/src/release/res

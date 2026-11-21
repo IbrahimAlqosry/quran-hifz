@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.alqosry.hifz.app-mergeReleaseResources-5:/values-en-rXC/values-en-rXC.xml",
+            "map": [
+                {
+                    "source": "/home/runner/.gradle/caches/8.14.3/transforms/4e80833c61e83e84e97bf1ffb9aceabb/transformed/browser-1.4.0/res/values-en-rXC/values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,255,454,665",
+                        "endColumns": "199,198,210,201",
+                        "endOffsets": "250,449,660,862"
+                    }
+                },
+                {
+                    "source": "/home/runner/.gradle/caches/8.14.3/transforms/8fe9e37bfa059b74df4938c90747cbc7/transformed/core-1.1.0/res/values-en-rXC/values-en-rXC.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "202",
+                        "endOffsets": "253"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "867",
+                        "endColumns": "202",
+                        "endOffsets": "1065"
+                    }
+                }
+            ]
+        }
+    ]
+}

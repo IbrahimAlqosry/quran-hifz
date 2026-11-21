@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.alqosry.hifz.app-mergeReleaseResources-5:/values-ka/values-ka.xml",
+            "map": [
+                {
+                    "source": "/home/runner/.gradle/caches/8.14.3/transforms/4e80833c61e83e84e97bf1ffb9aceabb/transformed/browser-1.4.0/res/values-ka/values-ka.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,161,264,374",
+                        "endColumns": "105,102,109,104",
+                        "endOffsets": "156,259,369,474"
+                    }
+                },
+                {
+                    "source": "/home/runner/.gradle/caches/8.14.3/transforms/8fe9e37bfa059b74df4938c90747cbc7/transformed/core-1.1.0/res/values-ka/values-ka.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "479",
+                        "endColumns": "100",
+                        "endOffsets": "575"
+                    }
+                }
+            ]
+        }
+    ]
+}
