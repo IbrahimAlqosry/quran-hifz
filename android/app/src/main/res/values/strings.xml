@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">حفظ وتدبر</string>
+    <string name="sc_prayer">مواقيت الصلاة</string>
+    <string name="sc_adhkar">الأذكار</string>
+    <string name="sc_mushaf">المصحف</string>
+</resources>

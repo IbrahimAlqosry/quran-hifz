@@ -1,0 +1,43 @@
+plugins {
+    id 'com.android.application'
+}
+
+def host = 'ibrahimalqosry.github.io'
+
+android {
+    namespace 'com.alqosry.hifz'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId 'com.alqosry.hifz'
+        minSdk 21
+        targetSdk 36
+        versionCode 1
+        versionName '1.0.0'
+        manifestPlaceholders = [
+            hostName  : host,
+            defaultUrl: "https://${host}/quran-hifz/",
+        ]
+        resValue 'string', 'asset_statements',
+            "[{ \\\"relation\\\": [\\\"delegate_permission/common.handle_all_urls\\\"], \\\"target\\\": {\\\"namespace\\\": \\\"web\\\", \\\"site\\\": \\\"https://${host}\\\"}}]"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildFeatures {
+        resValues true
+    }
+}
+
+dependencies {
+    implementation 'com.google.androidbrowserhelper:androidbrowserhelper:2.5.0'
+}
